@@ -1,0 +1,27 @@
+/* CSS for the profile part */
+
+#content {
+	background:white;
+}
+footer.footer {
+	margin:0 auto;
+}
+#container {
+	margin-top:90px;
+}
+
+header.perso {
+	margin-top:90px;
+}
+
+header.perso .avatar {
+	float:left;
+}
+
+/* feed */
+td.avatar img {
+	max-height:100px;
+	max-width:100px }
+	
+#new_update {width:100%; padding:10px}
+#new_update textarea {width:80%}

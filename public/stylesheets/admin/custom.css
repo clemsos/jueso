@@ -1,0 +1,32 @@
+/* Modifications */
+
+span.approved {
+	background:green;
+}
+
+span.pending {
+	background:orange;
+}
+
+span.rejected {
+	background:red;
+}
+span.funded {
+	background: #FFEB0F;
+}
+
+div.col1 {
+	width:24%;
+	float:left;
+}
+
+div.col2 {
+	width:46%;
+	float:left;
+	margin: 0 2% 0 2%;
+}
+
+div.col3 {
+	width:24%;
+	float:left;
+}

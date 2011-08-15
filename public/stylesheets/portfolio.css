@@ -1,0 +1,375 @@
+/*   
+Theme Name: Jue Portfolio
+Author: Clément Renaud
+Author URI: http://www.clemsos.com/
+Tags: Portfolio, Photography, design, minimal...
+.
+
+0. Temp
+1. Reset
+2. General
+3. Layout
+3. Sidebar
+4. 
+*/
+
+
+@import url("inc/usernav.css");
+@import url(http://fonts.googleapis.com/css?family=EB+Garamond&v2);
+
+/* -------------------------------------------------------------- 
+0. Temp to delete */
+
+.debug_dump {
+	font-family:'Lucida Console', sans-serif;
+	text-align:left;
+	font-size:8pt;
+}
+
+
+/* -------------------------------------------------------------- 
+1. Reset all browsers CSS to default.
+   Based on work by Eric Meyer:
+   http://meyerweb.com/eric/tools/css/reset/index.html
+-------------------------------------------------------------- */
+
+/* v1.0 | 20080212 */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+    background:#fff;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a img { border: none; }
+
+
+/* -------------------------------------------------------------- 
+2. Apply a basic layout */
+
+#wrap {
+width:96%;
+padding:40px 20px 0 40px;
+}
+
+#sidebar {
+float:left;
+width:12%;
+margin-right:1%;
+}
+
+#content {
+float:right;
+width:87%;
+}
+
+#footer {
+clear:both
+}
+
+/* Apply basic styling */
+
+
+body {
+    color: #282828;
+    font: 1em/1.4em 'EB Garamond', serif;
+    margin: 0;
+    padding: 0;
+}
+
+#wrap {
+	background: none repeat scroll 0 0 #FFFFFF;
+	text-align:left;
+}
+
+blockquote {
+    border-left: 2px solid #999999;
+    color: #999999;
+    font: italic 1em/1.4em georgia,serif;
+    margin: 20px;
+    padding: 10px 20px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+a, a:focus, a:hover, a:link, a:visited {
+	color:#000;
+	text-decoration:none;
+}
+
+
+h1,h2,h3,h4,h5 {
+margin-bottom:10px
+}
+
+h1 {font-size:24pt}
+h2 {font-size:20pt; color:#000}
+h3 {font-size:16pt}
+h4 {font-size:12pt; font-weight:normal}
+h5 {font-size:10pt}
+
+ul {
+list-style:none;
+}
+
+.picture img {
+max-width:750px;
+max-height:600px
+}
+
+.clear {
+	clear:both;
+}
+
+::selection {
+	background: #FFF666;
+	color: black;
+}
+
+/* Sidebar */
+
+#sidebar h1 {
+	margin-bottom:1em;
+	color:#000;
+	font-size:18pt;
+}
+
+#menu a.active {
+	color:#C0c0c0;
+}
+
+#nav, #menu a {
+	color:#282828;
+}
+
+#menu li.last {
+	margin-bottom:1em;
+}
+
+#infos {
+	font-size:0.85em;
+	line-height:1.3em;
+}
+
+span.zh {
+	font-size:9px
+	}
+
+#sns  {
+	margin-top:2em;
+	margin-bottom:2em;
+}
+
+#copyright {
+	margin-top:2em;
+	font-size:8pt;
+	line-height:1.3em;
+}
+
+
+#sns a {
+	display: block;
+    float: left;
+    height: 25px;
+    text-indent: -9000px;
+    width: 20px;
+}
+
+a.twitter {
+    background: url("../images/sns/twitter.png") no-repeat scroll 0 top transparent;
+}
+
+a.posterous {
+	background: url("../images/sns/posterous.png") no-repeat scroll 0 top transparent;
+}
+
+a.weibo {
+	background: url("../images/sns/weibo.png") no-repeat scroll 0 top transparent;
+}
+
+/* Series */
+
+#thumbs {
+	display:none;
+}
+
+.thumb {
+	float:left;
+	padding:0 20px 0 0;
+	width:84px;
+	height:84px;
+}
+
+.thumb img {
+	width:84px;
+	height:84px;
+}
+
+.thumb-describe {
+	text-align:center;
+}
+
+.thumb-describe a{
+	display:block;
+}
+
+div.picture img {
+	max-height:500px;	
+}
+
+#description {
+	position:absolute;
+	right:0;
+	top:0;
+	width:200px;
+	height:100%;
+	color:white;
+	background-color:#000;
+	padding:20px;
+	overflow-y:scroll;
+	 -moz-opacity:.70; 
+	-khtml-opacity: 0.7;
+	filter:alpha(opacity=70); 
+	opacity:.70;
+}
+
+.serie {
+	width:29%;
+	padding:1%;
+	float:left;
+}
+
+div.pictures {
+	margin-bottom:1em;
+}
+
+
+div.nav {
+	font-size:0.8em;
+	width:100px;
+	text-align:center;
+	line-height: 1em;
+	margin-bottom:1em;
+}
+
+div.legend p {
+	text-align:justify;
+}
+
+a.thumbs-but {
+    background: url("../images/nav.png") no-repeat scroll -80px top transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9000px;
+    width: 15px;
+    float: right;
+}
+
+a#next {
+    background: url("../images/nav.png") no-repeat scroll -50px top transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9000px;
+    width: 15px;
+    float: right;
+}
+
+
+a#prev {
+    background: url("../images/nav.png") no-repeat scroll -15px top transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9000px;
+    width: 15px;
+    float: left;
+}
+
+
+a.first-but {
+    background: url("../images/nav.png") no-repeat scroll 0px top transparent;
+    display: block;
+    height: 20px;
+    text-indent: -9000px;
+    width: 15px;
+    float: left;
+}
+
+
+
+
+/* writing */
+
+#writing h2 {
+	margin-bottom:1em;
+}
+
+#writing .utils {
+	float:right;
+	width:28%;
+	margin-left:2%;
+	font-size:0.8em;
+	text-align:justify;
+}
+
+#writing .utils li {
+margin-bottom:1.5em;
+}
+
+#writing .utils a.dl {
+	color:#2c2c2c;
+}
+
+#writing .full-text {
+	float:left;
+	width:66%;
+	text-align:justify;
+}

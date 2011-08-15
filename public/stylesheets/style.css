@@ -1,0 +1,729 @@
+/* JUE.so Style 
+
+Reset 
+0. Temp 
+1. General
+2. Header
+3. Footer
+4. Users
+5. Projects + Proposals
+6. Home
+*/
+
+@import url("inc/reset.css");
+@import url("inc/usernav.css");
+@import url("inc/layout.css");
+
+
+/*
+0. Temp (to delete)
+++++++++++++++++++++++++++++++++ */
+
+a.valid {
+	border:#c2c2c2 2px solid;
+	background-color:#ccc;
+	padding:10px;
+	font-size:12pt;
+}
+
+
+/*
+1. General
+++++++++++++++++++++++++++++++++ */	
+
+/* typography */
+body {
+	font-size:75%;
+	font-family: 微软雅黑, ff-dagny-web-pro-1, ff-dagny-web-pro-2, sans-serif; 
+	color: #222;
+	background:#000;
+}
+
+html>body { font-size: 12px; }
+p {font-size:1em;margin-top: 1.5em;margin-bottom: 1.5em;}
+h1 {font-size:2em;line-height:1.5em;margin-bottom:0}
+h2 {font-size:1.8333em;line-height:1.6364em;margin-bottom:0}
+h3 {font-size:1.6667em;line-height:1.8em;margin-bottom:0}
+h4 {font-size:1.5em;line-height:1em;margin-bottom:0}
+h5 {font-size:1.3333em;line-height:1.125em;margin-bottom:0}
+h6 {font-size:1.1667em;line-height:1.2857em;margin-bottom:0}
+
+/* lists */
+ul { list-style:none; }
+
+
+/* table, forms */
+table { width:100%; text-align:left;}
+th { padding:10px; vertical-align:top}
+tr { border-top:1px solid #ccc; }
+
+input { height:2em }
+input, textarea, select {	border:1px solid #ccc; }
+
+th.table-title { width:20%; background:#F5f5f5; text-transform:uppercase; text-align:right; padding: 20px;}
+th.help { width:15%;color:#bbb; font-style:italic;text-align:top;}
+table input[type=text], table textarea {width:70%}
+input.money { border:none }
+
+/* presets */
+.clear {clear:both;}
+.hidden { display:none; }
+.rounded-corners { -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px;}
+a.edit { background: url("../images/edit.gif") no-repeat scroll 0 top transparent; display: block; height: 25px; text-indent: -9000px; width: 60px; float: right; }
+
+/* basic */
+a {color:#727272; text-decoration: none; }
+#content { background:#fff }
+#user-content, #project-content {background:#fff}
+
+/* == error handling == */
+.error {
+	color:red;
+}
+
+.field_with_errors input, .field_with_errors textarea, .field_with_errors select {
+	border: 2px solid red;
+}
+
+.success { color:green;}
+a.delete { color:red; }
+a.active { color:#000; font-weight:bold; }
+
+#login-popup {
+	display:none;
+}
+
+.field {
+	clear:both;
+}
+
+
+#loading {
+	display:none;
+	margin-top: 50px;
+    text-align: center;}
+
+.field_with_errors {  
+	display: inline;  
+}  
+
+.field_with_errors .message {  
+	color: #D00;  
+	padding-left: 5px;  
+	font-size: 12px;  
+}
+
+/* Favorites */
+
+#favorite_form .favbutton{
+	background: url("../images/star.png") no-repeat scroll 0 bottom transparent;
+    border: medium none;
+    display: block;
+    height: 50px;
+    text-indent: -9000px;
+    width: 50px;
+}
+#favorite_form .removefav {
+	background-position:top;
+   
+}
+/*
+2. Header
+++++++++++++++++++++++++++++++++ */	
+
+header.top { margin:0 ; padding: 1em; }
+
+header.top h1{
+  margin:0;
+  font-weight: normal;
+  line-height:150%;
+  color:white;
+}
+
+header.top nav {
+	float:right;
+	background-color: #FFF;
+	height:95px;
+	margin-left:10px;
+	padding:5px;
+	text-align:center;
+	width:800px;
+}
+
+ul.top-nav { 
+	padding-top:10px;
+	font-size:1.25em;
+	font-weight:bold;
+	}
+
+header.top input {
+	width:90%;
+	height:35px;
+	margin:20px auto;
+	background:#fff url('../images/eyes.png') no-repeat left -20px;
+	font-size:1.3em; 
+	padding-left:55px;
+}
+
+header.top input:focus { 
+	background-position:left 10px;
+	}
+
+
+#login-utils {
+	float:right;
+	margin:0;
+	padding:0;
+}
+#login-utils a, header.top a.home {
+	color:#000;
+	font-weight:bold;
+}
+
+
+
+#main-nav li {
+	float:left;
+}
+
+#main-nav li a {
+	padding:8px;	
+	margin-right:10px;
+}
+
+a.start-project {
+	color:#FFCD00;
+}
+
+#header img {
+	float:left;
+}
+#branding {
+	float:left;
+}
+
+#top-menu ul {
+	list-style:none;
+	height:20px;
+}
+
+#top-menu li a {
+	padding:10px;
+}
+
+
+
+/*
+3. Footer
+++++++++++++++++++++++++++++++++ */
+
+footer.footer {
+	background:white;
+	margin:20px 0 20px 0;
+
+}
+
+footer.footer div {
+	float:left;
+	width:30%;
+}
+
+footer.bottom {
+	background: #000;
+	height:20px;
+	font-size:10pt;
+	padding:15px;
+}
+
+footer.bottom p {
+	color:#FFF;
+	padding:0;
+	float:left;
+}
+
+footer.bottom ul {
+	list-style:none;
+	float:right;
+	padding:0;
+	margin:0;
+}
+
+footer.bottom li a {
+	color:#FFF;
+	padding:10px;
+}
+
+footer.bottom li {
+float:left;
+}
+
+
+/*
+4. Users
+++++++++++++++++++++++++++++++++ */
+
+/*Users page*/
+.users li {
+	float:left;
+	width:210px;
+	height:210px;
+	margin:5px;
+	font-size: 2em;
+}
+
+li.user .details {
+ 	background: none repeat scroll 0 0 #000000;
+    display: none;
+    font-size: 0.4em;
+    height: 210px;
+    margin: 0;
+    opacity: 0.8;
+    overflow: hidden;
+    padding: 0;
+    position: relative;
+    top: -254px;
+    width: 210px;
+}
+
+li.user .details a{
+	display:block;
+}
+
+.users li img {
+	padding:0;
+	margin:0;
+	width:100%;
+	height:100%;
+}
+
+.users li h4 {
+	position:relative;
+	top:-42px;
+	height:40px;
+	background:#000;
+	opacity:0.8;
+	margin:0;
+}
+
+.users li a {
+	font-size:12pt;
+	color:#ffcb00;
+}
+
+
+/* Single user page */
+.stats {
+	width:100px;
+}
+
+header.intro {
+	width:100%;
+	overflow:hidden;
+	margin-bottom:20px;
+}
+
+header.intro p {
+	margin:0;
+	text-align: justify;
+	color:#858585;
+}
+
+header.intro img {
+	float:left;
+}
+header.intro img.avatar {
+	padding:10px;
+}
+
+header.intro h1 {
+	margin-top:0;
+}
+
+header.intro .perso {
+	float:left;
+	background:white;
+	width:690px;
+	margin:10px;
+	height:190px;
+	padding:10px;
+	overflow:hidden;
+}
+
+header.intro .stats {
+	float:right;
+}
+
+header.intro section {
+	padding: 10px 0;	
+}
+
+header.intro .bio {
+	border-top : 1px dashed #000;
+}
+
+header.intro .bio .deco {
+	font-weight:bolder;
+	font-size:20pt;
+}
+
+#users-nav {
+	font-size:10pt;
+}
+
+#users-nav a {
+	float:left;
+	padding:10px 20px;
+	background-color:#00DFFF;
+	margin-right:5px;
+	color:white;	
+}
+
+#single-user .tab {
+	display:none;
+}
+
+#single-user div#news {
+	display:block;
+}
+
+#single-user .tab {
+	background:white;
+}
+
+#single-user .project {
+	padding:10px;
+	margin-bottom:20px;
+	border-bottom:1px dashed #000;
+}
+
+.member {
+	margin:1%;
+	float:left;
+	overflow:hidden;
+}
+
+.member img {
+	max-height:50px;
+}
+
+.micropost textarea {
+	width:100%;
+	height:3em;
+}
+
+a.follow  {
+	color:red;
+}
+a.unfollow {
+	color:white;
+}
+
+.member a, .member img  {	
+	padding:5px;
+}
+
+/* register page */
+
+#register{
+	border: 2px solid #2c2c2c;
+	width:50%;
+}
+
+#register input, #account input {
+	padding:5px;
+}
+
+#register div, #account div {
+margin:5px;
+text-align:right;
+}
+
+
+/* Edit user page 
+.jcrop-holder { float:right; }
+#preview_wrap { float:left; }
+*/
+
+/* 5. Projects + Proposals
+----------------------- */
+
+
+div.moneybar {
+	height:10px;
+	background:#ccc;
+	border:none;
+}
+
+div.moneybar .ui-progressbar-value {
+	background:#000;
+	border:none;
+}
+
+/* Proposals */
+
+#submit, #submit table {
+	width:100%;
+	margin:0 auto;
+}
+
+#header-prop li {
+	float:left;
+	font-size:20px;
+	margin: 0  0 1em 3em;
+	color:#ccc;
+}
+
+#left.proposal {
+	border:1px solid #ccc;
+	padding:10px;
+	margin:10px;
+}
+
+/* New Project */
+#new-project label {
+	clear:both;
+}
+
+#new-project div {
+	padding-bottom:25px;
+}
+
+#new-project .help {
+	font-size:9pt;
+	color:#CCC;
+	font-style:italic;
+}
+
+div#money-slider {
+	width:100%;
+	padding-bottom:0;
+	margin-right:50px;
+	margin-bottom:20px;
+}
+
+
+#searchaddress {
+	width:60%;
+}
+
+/* project index */
+.projects-list article {
+	padding:10px 10px 20px 10px;
+}
+
+/* project list */
+
+.project img { float:left; }
+.project .content { float:right; width:630px; padding-left:10px; }
+.project a { color:#000; }
+.project img { max-width:100%; max-height:200px;}
+.project .description { color: #858585}
+
+.project .results p { margin: 0; }
+.project .results div { float:left; padding: 0 10px 0 10px; border-left:1px solid #CCC; }
+.project .results { position:relative; top:50px; }
+.project p.total { float:right;}
+.project div.moneybar { float:none; height:5px}
+.project div.spec { width:40%; border:none }
+.project div.count { font-size:2em; line-height:0.7em; }
+
+.project .helper{ color:#ccc;}
+.project p.helper { font-size:10pt;}
+
+
+/* project thumb */
+.project-thumb {
+	width:210px;
+	height:320px;
+	overflow:hidden;
+	margin:5px;
+	padding-left:10px;
+	float:left;
+}
+
+.project-thumb img { max-width:100%; max-height:130px;}
+.project-thumb h4 { font-size:1.2em;margin:1em 0 0.5em 0}
+.project-thumb a {color: #000;}
+.project-thumb p {color: #858585; margin:0}
+.project-thumb .content {height:100%; text-align:justify;}
+.project-thumb .results {position:relative; bottom:－50px}
+.project-thumb .percent {float:left}
+.project-thumb .total {float:right}
+.project-thumb .author {margin:1.3em 0}
+.project-thumb .moneybar {margin:0.5em 0}
+
+
+/* single project */
+#project-nav a {
+	float:left;
+	background:#000;
+	width:24%;
+	padding:10px 0 10px 0;
+	text-align:center;
+	font-size:1.3em;
+	border-right:1px solid #ccc;
+}
+
+#project-nav a.active {
+	background:white;
+}
+
+li.ui-tabs-selected, li.ui-state-active, #project-nav a:hover {
+	background:white;
+}
+
+#project-nav li, ul.ui-widget-header, div.ui-tabs {
+margin:0;
+border: none; 
+background: none;
+}
+
+.ui-tabs .ui-tabs-nav li { border: none; background: none; float:none !important; }
+
+
+#new_comment { text-align:center; }
+#new_comment textarea { width:80%; }
+
+#proj-utils {
+	background-color: #202020;
+	padding:0 10px;
+}
+
+span.number {
+	font-size:4em;
+	display:block;
+	color:white;
+}
+
+#proj-utils li {
+	padding:10px;
+	border-bottom:1px dashed #8e8e8e;
+	margin:0;
+}
+span.legend {
+	color:#FFCE00;
+	font-size:12pt;
+	margin:0;
+}
+
+a.button {
+	background-color:#FFce00;
+	color:black;
+	width:90%;
+	height:20px;
+	padding:10px;
+	margin-bottom:10px;
+	font-size:10pt;
+	text-align:center;
+	font-weight:bold;
+}
+
+.reward {
+	font-size:10pt;
+	color:white;
+}
+.backs tr { border-top:1px solid #ccc; }
+
+/* back form */
+#rewards-list .reward { 
+color:#000;	
+}
+
+#update,#comment,#new_back { padding:10px; }
+#update textarea,#comment textarea,#new_back textarea { width:80%; }
+
+
+/* following page */
+
+#following li {
+}
+
+#following li a{
+	float:left;
+	background-color:#efefef;
+	padding:20px;
+	margin-left:10px;
+}
+
+.feed-item span.myself {
+	color:red;
+}
+
+/* */
+
+span.status {
+	padding:5px; 
+	color:white;
+	font-weight:bold;
+}
+
+span.approved, span.approved a {
+	background:green;
+	color:white;
+}
+
+span.pending {
+	background:orange;
+}
+
+span.rejected {
+	background:red;
+}
+span.funded {
+	background: #FFEB0F;
+}
+
+
+/*
+6. Home
+++++++++++++++++++++++++++++++++ */
+
+div.home {
+}
+
+.home section {
+	margin-bottom:15px;
+}
+
+div.feature { clear:both; background:transparent; }
+div.slideshow { margin:10px; height:350px}
+nav.feat-utils { float:right; clear:both; margin-top:5px; z-index:1; position:relative; }
+nav.feat-utils a {
+	background: url("../images/slider-nav.png") no-repeat scroll 0 bottom transparent;
+    border: medium none;
+    display: block;
+	float:left;
+    height: 50px;
+	margin-right:10px;
+    text-indent: -9000px;
+	width: 40px;
+}
+
+
+nav.feat-utils a.more{ background-position:right center; }
+nav.feat-utils a.next{ background-position:left center; }
+nav.feat-utils a.prev{ background-position:center center; }
+
+#thumbs li.activeSlide { background:yellow; }
+#thumbs li { float:right; background:black; width:10px; height:10px; margin-right:10px; position:relative; top:-30px; right:20px; text-indent: -9000px; z-index:99999; }
+
+.home #projects { background:#fff; position:relative; top:-70px }
+
+
+/*
+6. Features
+++++++++++++++++++++++++++++++++ */
+
+section#features .feature h3 {
+	width:100%;
+}
+section#features .feature h3 {
+	position:relative;
+	top:-54px;
+	height:50px;
+	width:100%;
+	background:#c2c2c2;
+	opacity:0.8;
+	font-size:3em;
+}
+
