@@ -1,0 +1,13 @@
+<header class="top">
+	<section id="branding">	
+	<% logo = image_tag("logo.gif", :alt => "Jue.so", :class => "round") %>
+	 <%= link_to logo, root_path %>
+	</section>
+	<nav id="main-nav">
+		<%= render :partial => 'layouts/nav' %>
+		<input id="search" type='text' />
+	</nav>
+	<div class="clear"></div>
+</header>
+
+

@@ -1,0 +1,6 @@
+<% unless @projects.blank? %>
+	$('.projects-list').attr('last', '<%= @projects.to_a.last.created_at%>')
+	$('.endless_scroll_inner_wrap').append("<%=escape_javascript(render :partial => 'shared/project', :collection => @projects)%>");
+<% else %>
+	$('#infinite-scroll').detach();
+<% end %>

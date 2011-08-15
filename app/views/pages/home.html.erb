@@ -1,0 +1,90 @@
+<% content_for :scripts do %>
+	<%= javascript_include_tag 'jquery.cycle.all.min' %>
+	<script type="text/javascript" charset="utf-8">		
+	//home
+	$('.slideshow').cycle({ 
+		    speed:  'fast', 
+		    timeout: 0, 
+		    next:   'a.next', 
+		    prev:   'a.prev',
+			pager:  '#thumbs',
+			pagerAnchorBuilder: function(idx, slide) {
+			 	// return sel string for existing anchor
+			 	//return 'li:eq(' + (idx) + ') a';
+				return '<li><a href="#">_</a></li>';
+
+			},	
+	});
+	
+	//moneybar
+		$(".moneybar").each(function() {	
+			var values = $(this).text().split(' / ');
+			$(this).html('');
+			var percent = Math.round((values[0]/values[1])*100);
+			$(this).before('<p class="percent">' + percent + ' %</p><div class="clear"></div>');
+			$(this).progressbar({ value: percent });
+		})
+		
+	</script>
+<% end %>
+
+<div class='home'>
+<section id="featured">
+	<div class="slideshow">
+		<% @leads.each do |lead| %>
+			<div class="lead">
+				<% if lead.featimage.exists? then %>			
+					<%= link_to image_tag(lead.featimage.url), project_path(lead.project_id) %>
+				<% else %>
+					<%= link_to image_tag("/uploads/leads/lead-default.jpg", :size =>"100x100"), user %>
+				<% end %>
+			</div>
+		<% end %>
+	</div>
+	<ul id="thumbs">
+	</ul>
+	<nav class="feat-utils">
+		<%= link_to 'Prev', '#', :class => 'next'%>
+		<%= link_to 'Next', '#', :class => 'prev'  %>
+		<%= link_to 'More', projects_path, :class => 'more'  %>
+	</nav>
+	<div class="clear"></div>
+</section>
+
+<section id="projects">
+	<h2><%= link_to '最新项目 New projects', projects_path %></h2>
+		<% @projects.each do |project| %>
+		 <%= render 'shared/project_thumb', :project => project%>
+		<% end %>
+	<div class="clear"></div>
+</section>
+<section class="users">
+	<ul>
+	<li><%= link_to image_tag('/images/home-users.png', :alt =>'meet the creative people'), users_path%></li>
+  <% @users.each do |user| %>
+		<%= render 'shared/user', :user => user %>
+  <% end %>
+	</ul>
+	<div class="clear"></div>
+</section>
+<section id="news">
+	<ul class="comments">
+	<h4>NOW</h4>
+	<% @comments.each do |comment| %>
+		<li class="comment">
+			<p><span class="time"><%= time_ago_in_words(comment.created_at) %> | @</span><%= comment.user.username %></p>
+			<p><%= comment.body %></p>
+		</li>
+	  <% end %>
+	<div class="clear"></div>
+	</ul>
+	<div class="ad">
+		<%= image_tag('/images/home_haibao_1.png', :alt =>'hai bao 1') %>
+	</div>
+	<div class="ad">
+		<%= image_tag('/images/home_haibao_2.png', :alt =>'hai bao 2') %>
+	</div>
+	<p class="clear"></p>
+</section>
+<div class="clear"></div>
+</div>

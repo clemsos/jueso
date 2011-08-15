@@ -1,0 +1,14 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'jquery, jquery.form' %>
+<%= javascript_include_tag :ckeditor %>
+<script >
+
+</script>
+<% end %>
+
+<h2>Update "<%= @project.title %>"</h2>
+<p><%= link_to "View/Edit project", profile_project_path(@project)%></p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back to project', project_path(@project) %>

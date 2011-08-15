@@ -1,0 +1,43 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'jquery.min', 'jquery.dataTables.min', 'rails.js' %>
+<% end %>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+$('.table').dataTable();
+</script>
+<% end %>
+
+<h1>My projects</h1>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>Title</th>
+	    <th>Description</th>
+	    <th>Money</th>
+		<th>Updates</th>
+	    <th>Tools</th>
+	  </tr>
+	</thead>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><h3><%= link_to project.title, edit_profile_project_path(project) %></h3></td>
+    <td><%= project.description %></td>
+	<td><p><%= project.total %> /  <%= project.money %></p></td>
+    <td><%= link_to 'Add an update',  new_profile_project_update_path(project) %></td>
+    <td>
+		<ul class="tools">
+			<li><%= link_to 'Show', project, :class => 'show' %></li>
+		    <li><%= link_to 'Edit', edit_profile_project_path(project), :class => 'modify' %></li>
+		    <li><%= link_to 'Destroy', project, :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %></li>
+		</ul>
+	</td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_profile_proposal_path %>

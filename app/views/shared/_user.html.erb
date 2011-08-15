@@ -1,0 +1,13 @@
+    <li class="user">
+      	<% if user.avatar.exists? then %>
+			<%= image_tag user.avatar.url(:medium) %>
+		<% else %>
+			<%= image_tag "/images/avatar-default.png", :size => "200x200"%>
+		<% end %>
+      <h4><%= link_to user.username, user %></h4>
+		<div class='details'>
+			<h2><%= link_to user.username, user %></h2>
+			<p><%= user.bio %></p>
+			<p><%= user.followers.count %>
+		</div>
+    </li>

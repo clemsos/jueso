@@ -1,0 +1,72 @@
+<% content_for :scripts do%>
+<%= javascript_include_tag 'jquery.min'%>
+
+<script> 
+
+$('input[name="change_role[role]"]').change( function() {
+	if( $('#change_role_role_artist').is(':checked') ) {
+		console.log ('artists');
+		$('th.select-skills').html('<%= escape_javascript(select( "change_role", "skill_list", myskills) ) %>')
+	} else {
+		console.log ('institutions');		
+		$('.select-skills').html('<%= escape_javascript(select( "change_role", "skill_list", mytypes)) %>')		
+	}	
+})
+
+</script> 
+
+<% end %>
+
+<h2>Become a special member </h2>
+
+<%= form_for [:profile, @changerole] do |f| %>
+
+<% if @changerole.errors.any? %>
+  <div id="error_explanation"  class="flash alert">
+    <p><%= pluralize(@changerole.errors.count, "error") %> prohibited this project from being saved:</p>
+
+    <ul>
+    <% @changerole.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+
+<table>
+	<tr>
+		<th class="table-title"><%= f.label :membership %></th>	
+		<th>
+			<%= f.radio_button :role, "artist" %>Artist
+			<%= f.radio_button :role, "institution" %>Institution
+		</th>	
+	</tr>
+	<tr>
+		<th class="table-title"><%= f.label :real_name %></th>	
+		<th><%= f.text_field :real_name %></th>	
+	</tr>
+	<tr>		
+		<th class="table-title"> <%= f.label :skills %></th>
+		<th class="select-skills"><%= select( "change_role", "skill_list", myskills ) %></th>
+	</tr>
+	<tr>
+		<th class="table-title"><%= f.label :description %></th>
+		<th><%= f.text_area :description, :rows => 10 %></th>
+		<th class="help"><p>Write a short introduction about yourself ?</p></th>
+		</th>
+	</tr> 
+	<tr>
+		<th class="table-title"><%= f.label :more %></th>
+		<th><%= f.text_area :more, :rows => 10  %></th>
+		<th class="help"><p>Where can we find more about you ?</p></th>
+	</tr>
+	<tr>	
+	  <th class="table-title"s><%= f.label :phone %></th>
+	  <th><%= f.text_field :phone %></th>
+	</tr>
+</table>
+
+  <div class="actions"><%= f.submit %></div>
+
+<% end %>

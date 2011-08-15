@@ -1,0 +1,78 @@
+<% content_for :scripts do %>
+<script> 
+	$(function() {
+			$( "#slider" ).slider({
+				value:100,
+				min: 0,
+				max: 25000,
+				step: 100,
+				slide: function( event, ui ) {
+					$( "#proposal_money" ).val( ui.value );
+				}
+			});
+			$( "#proposal_money" ).val($( "#slider" ).slider( "value" ) );
+		});
+	</script>
+<% end %>
+
+<%= form_for(@proposal) do |f| %>
+
+  <% if @proposal.errors.any? %>
+    <div id="error_explanation"  class="flash alert">
+      <p><%= pluralize(@proposal.errors.count, "error") %> prohibited this project from being saved:</p>
+
+      <ul>
+      <% @proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table>
+	<tr>
+		<th><%= f.label :title %></th>	
+		<th><%= f.text_field :title %></th>	
+	</tr>
+	<tr>
+		<th><%= f.label :description %></th>
+		<th><p class="help">What do you like to create ?</p>
+			<%= f.text_area :description %>
+		</th>
+	</tr>
+  
+<tr>
+    <th><%= f.label :rewards %></th>
+	<th><p class="help">What rewards would you offer ?</p>
+		<%= f.text_area :rewards %>
+		</th>
+</tr>
+<tr>
+	
+  <th> <%= f.label :money %></th>
+   <th> <div id='slider'></div>
+			¥<%= f.text_field :money %>
+		
+	 </th>
+</tr>
+
+<tr>
+   <th> <%= f.label :categories %></th>
+	<th> <%= select( "proposal", "category_list", mycats ) %></th>
+</tr>
+
+<tr>
+	<th><%= f.label :more %></th>
+	<th><p class="help">Where can we find more about your project ?</p>
+    <%= f.text_area :more %></th>
+</tr>
+
+</table>
+  <div class="actions">
+    <%= f.submit %>
+
+
+  
+</div>
+<% end %>

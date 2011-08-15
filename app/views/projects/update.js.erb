@@ -1,0 +1,12 @@
+$('#left').prepend('<div id="update"></div>');
+$("#update").html("<%= escape_javascript(render('updates/form')) %>");
+
+$("#update_submit").click(function(){
+	$('#new_update')		
+			.bind('ajax:success', function(data, status, xhr) {
+				//console.log(data)
+				$('#update').fadeOut('slow', function() {
+					$('#left').prepend('<p class="succes">Project Updated</p>')
+				})
+			})
+})

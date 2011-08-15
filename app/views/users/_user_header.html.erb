@@ -1,0 +1,33 @@
+<header class='user-intro intro'>		
+		<% if @user.avatar.exists? then %>
+			<%= image_tag @user.avatar.url(:medium), :size => '210x210', :class => 'avatar' %>
+		<% else %>
+			<%= image_tag "/images/avatar-default.png", :size => '210x210', :class => 'avatar' %>
+		<% end %>
+		
+		<section class='perso'>
+			
+			<% if @user == current_user %>
+				<%= link_to 'Edit', edit_user_path(@user), :class => 'edit user-edit' %>
+			<% end %>
+			
+			<h1><%= @user.username %></h1>
+			<section class="infos">
+				<p> 城市 ：<%= @user.city %></p>
+				<p> 注册时间 ：<%= @user.created_at %></p>
+				<% if !@user.link.blank? then %>
+				<p> 永久链接 ：<%= @user.link %></p>
+				<p>邮箱地址：<%= link_to @user.email, 'mailto:'+@user.email %></p>
+				<% end %>
+			</section>
+			<% if !@user.bio.blank? then %>
+			<section class="bio">
+				<span><%= image_tag "/images/bio.png", :class => 'bio-deco' %></span>
+				<p> <%= @user.bio %></p>
+			</section>
+			<% end %>
+
+		</section>
+		<%= render '/users/follow_form' if user_signed_in? %>
+		<div class='clear'></div>
+</header>

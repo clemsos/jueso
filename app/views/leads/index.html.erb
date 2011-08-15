@@ -1,0 +1,12 @@
+<section id="features">
+	<% @leads.each do |lead| %>
+		<div class="lead">
+		<% if lead.featimage.exists? then %>			
+			<%= link_to image_tag(lead.featimage.url), project_path(lead.project_id) %>
+		<% else %>
+			<%= link_to image_tag("/uploads/leadd/lead-default.jpg", :size =>"100x100"), user %>
+		<% end %>	
+		<h3><%= link_to lead.title, project_path(lead.project_id) %></h3>
+		</div>
+	<% end %>
+</section>

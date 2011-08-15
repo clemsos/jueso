@@ -1,0 +1,29 @@
+<h2><%= @change_role.real_name %></h2>                                                   
+<div class="col1">
+  	<h4> By <%= link_to @change_role.user.username, admin_user_path(@change_role.user) %></h4>
+	<div id="user-thumb">	
+		<% if @change_role.user.avatar.exists? then %>
+			<%= link_to image_tag(@change_role.user.avatar.url(:small)), @change_role.user %>
+		<% else %>
+			<%= link_to image_tag("/images/avatar-default.png", :size =>"200x200"), @change_role.user %>
+		<% end %>
+	</div>
+</div>
+
+<div class="col2">
+    <h4>Description</h4>
+  	<p><%= @change_role.description %></p>
+    
+    <h4> More info </h4>
+    <p><%= @change_role.more %></p>
+</div>
+
+<div class="col3">
+    <h4> Contacts </h4>
+    <p>Phone: <%= @change_role.phone %></p>
+    <p>Email: <%= User.where(:id => @change_role.user_id).first.email%> </p>
+	
+	<h4> Status </h4>
+	<p><span class="status <%= @change_role.state %>"><%= @change_role.state %></span></p>
+
+</div>

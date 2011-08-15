@@ -1,0 +1,113 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag('jquery.fileupload-ui') %>
+	<%= stylesheet_link_tag "jcrop" %>
+<% end %>
+
+<% content_for :scripts do%>
+<%= javascript_include_tag 'jcrop.min', "rails.validations", "rails.validations.custom", 'jquery.form' %>
+
+<script type="text/javascript" charset="utf-8">
+
+$('a[data-remote="true"]').click(function(){
+	$(this).append('<img src="/images/ajax-loader.gif" class="ajax-loader" />');
+})
+
+// popup login
+$('#avatar').dialog({
+	autoOpen: false,
+	width: 650,
+	height: 450
+});
+
+</script>
+
+<% end %>
+
+<h1>设置</h1>
+<div id="edit_user_form">
+	<%= form_for(@user, :html => { :multipart => true },  :class => 'user_edit',  :validate => true, :remote => :true) do |f| %>
+	
+	  <% if @user.errors.any? %>
+	    <div id="error_explanation" class="error">
+	      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+	      <ul>
+	      <% @user.errors.full_messages.each do |msg| %>
+	        <li><%= msg %></li>
+	      <% end %>
+	      </ul>
+	    </div>
+	  <% end %>
+
+
+<table>
+	<tr>
+		<th><%= f.label :EMAIL地址 %></th>
+	    <th><%= f.text_field :email, :validate => true %></th>
+	</tr>
+	<tr>
+	    <th>密码</th>
+	    <th>
+			<%= link_to 'Change Password', passchange_path, :remote => true  %>
+			<div id="passwords"></div>
+		</th>
+	</tr>
+	<tr>
+	    <th><%= f.label :名称 %></th>
+	    <th><%= f.text_field :username %></th>
+	</tr>
+	<% if can? :create, Gallery %>
+	<tr>
+	    <th><%= f.label :域名（固定链接用的） %></th>
+	    <th><%= f.text_field :alias %></th>
+	</tr>
+	<% end %>
+	
+	<tr>
+	    <th>头像</th>
+	    <th>
+		<div class="avatar">
+		<% if @user.avatar.exists? then %>
+			<%= image_tag @user.avatar.url(:normal) %>
+		<% end %>
+		</div>
+		<%= link_to 'Change Avatar', user_avatar_path(@user), :remote => true, :class => 'trigger'  %>
+		</th>
+	</tr>
+	<tr>
+	    <th>城市</th>
+	    <th><%= f.city_select :city %></th>
+	</tr>
+	<tr>
+	    <th><%= f.label :自己介绍 %></th>
+	    <th><%= f.text_area :bio %></th>
+	</tr>
+	<tr>
+	    <th><%= f.label :博客或个人网站 %></th>
+	    <th><%= f.text_field :link %></th>
+	</tr>
+	<tr>
+	    <th>微薄</th>
+	    <th><%= f.text_field :weibo %></th>
+	</tr>
+	<tr>
+	    <th><%= f.label :skills %></th>
+	    <th><%= select( "user", "skill_list", myskills ) %></th>
+	</tr>
+	<tr>
+	    <th>订阅设置</th>
+	    <th>checkboxes</th>
+	</tr>
+
+</table>
+
+	<div class="actions">
+	  <%= f.submit %>
+	</div>
+	<% end %>
+</div>
+	
+<div id="avatar" title="Chose avatar"></div>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>

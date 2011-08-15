@@ -1,0 +1,5 @@
+<section id="user-projects" >
+	<% @projects.each do |project| %>
+		<%= render "shared/project", :project => project %>
+	<% end %>
+</section>

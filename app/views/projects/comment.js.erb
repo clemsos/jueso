@@ -1,0 +1,8 @@
+/* Add the new comment to the bottom of the comments list */
+$("#comments .list").prepend("<%= escape_javascript(render(@comment)) %>");
+
+/* Highlight the new comment */
+$("#comment-<%= @comment.id %>").effect("highlight", {}, 3000);
+
+/* Reset the comment form */
+$("#new_comment")[0].reset();

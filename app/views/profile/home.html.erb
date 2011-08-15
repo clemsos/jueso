@@ -1,0 +1,26 @@
+<% content_for :scripts do%>
+<%= javascript_include_tag "rails","jquery.min","rails.validations", "rails.validations.custom" %>
+<% end %>
+<div id="right">	
+	<ul class="projects">
+		<h4>My projects</h4>
+		<% @projects.each do |project| %>
+			<li><%=link_to project.title, edit_project_path(project) %></li>
+		<% end %>
+	</ul>
+	<ul class="proposals">
+		<h4>My proposals</h4>
+		<% @proposals.each do |proposal| %>
+			<li><%=link_to proposal.title, profile_proposal_path(proposal) %></li>
+		<% end %>
+	</ul>
+</div>
+
+<div id="left">		
+	<div class="micropost">
+		<h4>What's up?</h4>
+		<p class="help">Update your status</p>
+		<%= render 'shared/micropost_form' %>
+		<%= render 'shared/feed' %>
+	</div>
+</div>

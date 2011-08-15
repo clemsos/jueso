@@ -1,0 +1,2 @@
+$('div.avatar').html('<%= escape_javascript( render(:partial => "/users/avatar_update") %>')
+<%= image_tag @user.avatar.url(:normal) %>

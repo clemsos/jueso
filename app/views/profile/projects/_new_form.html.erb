@@ -1,0 +1,84 @@
+<% content_for :scripts do%>
+	<%= javascript_include_tag 'jquery.min','jquery-ui-1.8.14.custom.min','jquery.timepicker','nested_form' %>
+	<script type="text/javascript" charset="utf-8">	
+		// project form
+		$("#project_deadline").datetimepicker({
+			timeFormat: 'hh:mm:ss',
+			dateFormat: 'y-mm-dd'
+		});
+
+		$( ".slider" ).slider({
+			range: true,
+			min: 0,
+			max: 500,
+			values: [ 75, 300 ],
+			slide: function( event, ui ) {
+				$(this).next().find('.min').val( ui.values[ 0 ] );
+				$(this).next().find('.max').val( ui.values[ 1 ] );
+			}
+		});	
+	
+	</script>
+	
+<% end %>
+
+<%= nested_form_for(@project) do |f| %>
+
+<%= hidden_field_tag :proposal_id, params[:proposal_id] %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+<tr>
+	<th><%= f.label :title %></th>
+    <th><h2><%= @proposal.title %></h2>
+</tr>
+<tr>
+
+    <th><%= f.label :money %></th>
+    <th><h3><%= @proposal.money %></h3></th>
+</tr>
+<tr>
+  	<th><%= f.label :categories %></th>
+	<th><h3><%= @proposal.category_list %></h3></th>
+</tr>
+<tr>
+    <th><%= f.label :description %></th>
+    <th><%= f.text_area :description %></th>
+</tr>
+<tr>
+    <th><%= f.label :video_link %></th>
+    <th><%= f.text_field :video_link %></th>
+</tr>
+<tr>
+    <th><%= f.label :deadline %></th>
+    <th><%= f.text_field :deadline %></th>
+</tr>
+
+
+<tr>
+	<th>Rewards</th>
+	<th>
+<% f.fields_for :rewards do |builder| %>
+	<%= render "rewards_fields", :f => builder %>
+<% end %>
+<%= f.link_to_add "Add a reward", :rewards %>
+</th>
+</tr>
+</table>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

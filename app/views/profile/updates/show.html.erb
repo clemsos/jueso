@@ -1,0 +1,11 @@
+<h2><%= @update.title %></h2>
+<%= raw @update.body %>
+
+
+<div id="utils">
+	<span class="<%= @update.state %>">
+		<%= @update.state %>
+	</span>
+</div>
+
+<p><%= link_to 'Edit', edit_profile_project_update_path(@update.project_id,@update) %></p>

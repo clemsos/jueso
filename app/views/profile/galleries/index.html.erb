@@ -1,0 +1,41 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'jquery.min', 'jquery.dataTables.min', 'rails.js' %>
+<% end %>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+$('.table').dataTable();
+</script>
+<% end %>
+
+
+<h1>Listing galleries</h1>
+
+<table class="table">
+  <thead>
+	<tr>
+	    <th>Title</th>
+	    <th>Description</th>
+	    <th></th>
+
+	</tr>
+  </thead>
+
+<% @galleries.each do |gallery| %>
+  <tr>
+	<td><h3><%=  gallery.title %></h3></td>
+	<td><%=  gallery.description %></td>
+    <td>
+	<ul class="tools">
+		<li><%= link_to 'Show', profile_gallery_path(gallery), :class => 'show' %></li>
+	    <li><%= link_to 'Edit', edit_profile_gallery_path(gallery), :class => 'modify' %></li>
+	    <li><%= link_to 'Destroy', profile_gallery_path(gallery), :confirm => 'Are you sure?', :method => :delete, :class => 'destroy' %></li>
+		<li><%= link_to "Add Files", profile_gallery_add_files_path(gallery), :class => 'add-files' %></li>
+	</ul>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Gallery', new_profile_gallery_path() %>

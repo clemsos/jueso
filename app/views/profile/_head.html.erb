@@ -1,0 +1,36 @@
+<header class="perso">
+	<ul>
+		<li><%= link_to 'View public profile', user_path(@user), :class => 'profile-edit' %> <br /> </li>
+		<li><%= link_to 'Edit profile', edit_user_path(@user), :class => 'profile-edit' %></li>
+	</ul>
+	
+	<div class="avatar">
+		<% if @user.avatar.exists? then %>
+			<%= image_tag @user.avatar.url(:medium) %>
+		<% else %>
+			<%= image_tag "/images/avatar-default.png" %>
+		<% end %>
+	</div>
+	<h1><%= @user.username %></h1>
+
+		<p> 城市 ：</p>
+
+		<p> 注册时间 ：<%= @user.created_at %></p>
+	<% if !@user.link.blank? then %>
+		<p> 永久链接 ：<%= @user.link %></p>
+	<% end %>
+	
+	<% if !@user.bio.blank? then %>
+	<section class="bio">
+		<span class="deco">BIO</span>
+		<p> <%= @user.bio %></p>
+	</section>
+		
+	<% end %>
+	
+	<a><%= link_to @user.email, 'mailto:'+@user.email %></a>
+
+	<%= render 'shared/stats' %>
+
+
+</header>

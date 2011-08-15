@@ -1,0 +1,10 @@
+<% if @micropost.errors.any? %>
+  <div id="error_explanation" class="flash alert">
+    <p><%= pluralize(@micropost.errors.count, "error") %> prohibited this project from being saved:</p>
+    <ul>
+    <% @micropost.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

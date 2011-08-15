@@ -1,0 +1,24 @@
+<% content_for :scripts do%>
+<%= javascript_include_tag 'jquery.min','jquery.cycle.all.min', 'portfolio' %>
+<% end %>
+<div class="nav">
+	<a class="first-but" href="#">First</a>
+	<a id="prev" href="#">Prev</a>
+	<span class="current-pic">0</span> 
+	| <%= @gallery.uploads.count %> 
+	<a class="thumbs-but" href="#">Thumbnails</a>
+	<a id="next" href="#">Next</a>
+</div>
+<div class='slideshow'>
+<% @gallery.uploads.each do |upload| %>
+	<div class="picture">
+		<%= image_tag upload.picture.url() %>
+	</div>
+<% end %>
+</div>
+<div id="thumbs">
+</div>
+<div id='description'>
+	<h1><%= @gallery.title%></h1>
+	<%= @gallery.description %>
+</div>

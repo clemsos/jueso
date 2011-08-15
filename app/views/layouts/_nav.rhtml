@@ -1,0 +1,19 @@
+<ul class="top-nav">
+	<li><%= link_to '首页', root_path, :class => is_active?("home") %></li>
+	<li><%= link_to '创作人', users_path, :class => is_active?("users") %></li>
+	<li><%= link_to '觉项目', projects_path %></li>
+	<li><%= link_to '推荐', leads_path %></li>
+	<li><%= link_to "发布你的项目", '/submit/guidelines', :class => "start-project" %></li>
+	<ul id="login-utils">
+	<% if user_signed_in? %>  
+		<li><%= link_to "推出", destroy_user_session_path %></li>
+   <% else %>
+    	<li><%= link_to "注册", new_user_registration_path %></li>
+    	<li><%= link_to "登录", new_user_session_path, :class => 'login' %></li>
+   <% end %>
+	</ul>
+</ul>
+
+
+
+<div class="clear"></div>

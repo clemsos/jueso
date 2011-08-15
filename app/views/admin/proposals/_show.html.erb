@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+	<div class="proposal col1">
+		<h2><%= @proposal.title %></h2>
+		<b>Description:</b>
+			<p><%= @proposal.description %></p>
+		<b>Rewards:</b>
+			<p>	<%= @proposal.rewards %></p>
+
+		<b>More about the proposal:</b>
+		<p>	<%= @proposal.more %>
+		</p>
+
+		<b>Money (estimation):</b>
+		<p>	<%= @proposal.money %>
+		</p>
+	</div>
+	<div class="col2">
+		<b>Author:</b>
+		<p><%= @proposal.user.username %></p>
+		<p>	<%= @proposal.user.email %></p>
+		
+		<h3>Status</h3>
+		<p> Your project is : <%= @proposal.state %></p>
+	</div>
+	
+	<div class="col3" >
+		<% form_for(@proposal) do |f| %>
+			<p>
+		 	<%= f.label :state %><br />
+		    <%= f.collection_select :state_event, @proposal.state_transitions, :event, :human_to_name, :include_blank => @proposal.state %>
+		  </p>
+		  <p><%= f.submit 'Update' %></p>
+		<% end %>
+	</div>
+	
+</div>
+

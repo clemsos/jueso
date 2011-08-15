@@ -1,0 +1,24 @@
+<article class="project-thumb">
+	<%= image_tag "/images/video-default.jpg", :size => '300x200' %>
+	
+	<div class="content">
+		<h4><%= link_to project.title, project_path(project) %></h4>
+		<p class="description"><%= truncate(project.description, :length => 100) %></p>
+		<p class="author"><span class="helper">创建人 ：</span> <%= link_to project.user.username, user_path(project.user) %></p>
+		<section class="results">
+				<p class="total"><%= project.money %>¥</p>
+				<div class="moneybar"><%= project.total %> / <%= project.money %></div>
+				<p class="category"><span>[
+					<% project.category_list.each  do |cat| %> 
+					<%= link_to cat, category_path(cat) %> 
+					<% end %>
+					
+					]</span></p>
+				<% if project.state != "expired" %> 
+					<p class="deadline"><%= time_ago_in_words(project.deadline) %></p>
+				<% end %>
+				<div class="clear"></div>				
+		</section>
+	</div>
+	<div class="clear"></div>
+</article>

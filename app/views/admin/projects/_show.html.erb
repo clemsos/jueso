@@ -1,0 +1,31 @@
+<h2><%= @project.title %></h2> 
+<h3><%= @project.total %> / <%= @project.money %>元 in <%= time_ago_in_words(@project.deadline) %></h3>
+<div class="col1">
+
+<%= @project.description %>
+<%= @project.video_link %>
+</div>
+
+<div class="col2">
+<h3>Rewards</h3>
+	<ul>
+		<% for reward in @project.rewards %>
+			<li class="reward">
+			<p>赞助 <%= reward.amount_min %> - <%= reward.amount_max %> ¥</p>
+			<p><%= reward.description %></p>
+			</li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="col3">
+	<h4> By <%= link_to @project.user.username, admin_user_path(@project.user) %></h4>
+	<div id="user-thumb">	
+		<% if @project.user.avatar.exists? then %>
+			<%= link_to image_tag(@project.user.avatar.url(:small)), @project.user %>
+		<% else %>
+			<%= link_to image_tag("/images/avatar-default.png", :size =>"50x50"), @project.user %>
+		<% end %>
+	</div>
+</div>
+

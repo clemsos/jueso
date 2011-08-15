@@ -1,0 +1,20 @@
+<footer class="footer">
+	<div class="categories">
+		<h2>项目分类</h2>
+		<% @mycats = mycats %>
+		<ul id="skill_lists">
+		<% @mycats.each do |skill| %>
+			<li class="skill"><%= link_to skill[0],category_path(skill[1])  %></li>
+		<% end %>
+		</ul>
+	</div>
+	<div class="suscribe">
+		<h2>每周新闻</h2>		
+	</div>
+	<div class="sns">
+		<h2>关注我们</h2>
+			<%= link_to image_tag('/images/weibo.gif', :height =>'40px'), 'http://www.weibo.com' %>
+			<%= link_to image_tag('/images/douban.gif', :height =>'40px'), 'http://www.douban.com' %>
+	</div>
+	<div class="clear">	</div>
+</footer>

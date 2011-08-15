@@ -1,0 +1,96 @@
+<% content_for :scripts do%>
+<script type="text/javascript" charset="utf-8">
+
+// toggleLoading function
+var toggleLoading = function() { $("#loading").toggle() };
+
+function disableLink(e) {
+	$(this).addClass('disabled');
+    // cancels the event
+    e.preventDefault();
+    return false;
+}
+
+//tab system
+$('#project-nav a').click(function(e){
+	e.preventDefault();
+	$('.active').removeClass('active');
+	var myID = $(this).attr('class').split(" ")[0];
+	console.log(myID);
+	$(this).addClass('active');
+	$('.tab:visible').toggle();
+	$('#'+myID).toggle();
+	$('#'+myID).addClass('active');
+})
+
+// ajax callbacks
+$('a[data-remote="true"]').click(function(e){
+	$(this)
+		.bind('ajax:beforeSend', toggleLoading)
+		.bind('ajax:complete', toggleLoading)			
+		.bind('ajax:failure', function(data, status, xhr) {
+			$('#project-content').html('<p>Sorry, the page cannot be loaded</p>')
+		})
+		.bind('ajax:success', function(data, status, xhr) {
+			$(this).bind('click', disableLink);
+		})
+})
+
+// project display
+$(".moneybar").each(function() {
+	
+	var values = $(this).text().split(' / ');
+	$(this).html('');
+	var percent = (values[0]/values[1])*100;
+	$(this).before('<p>' + percent + ' %</p>');
+	$(this).progressbar({ value: percent });
+
+})
+
+</script>
+<% end %>
+<p id="notice"><%= notice %></p>
+
+<h2><%= @project.title %></h2> 
+<p><%= link_to @project.user.username, @project.user %></p>
+
+<div id='left'>	
+	<nav>
+		<ul id="project-nav">
+		<li><%= link_to '项目首页', '#', :class => "description" %></li>
+		<li><%= link_to '更新', project_updates_path(@project), :remote => :true, :class => "updates" %></li>
+		<li><%= link_to '费助人', project_backs_path(@project), :remote => :true, :class => "backs" %></li>
+		<li><%= link_to '评论', project_comments_path(@project), :remote => :true,:class => "comments" %></li>
+		</ul>
+	</nav>
+	<div class="clear"></div>
+	
+	<div id="project-content">
+		<div id="loading"><img src="/images/ajax-loader.gif" class="ajax-loader" /></div>
+		<div id="description" class="tab active">
+			<%= render 'description' %>
+		</div>
+		<div id="updates" class="tab"></div>	
+		<div id="backs" class="tab"></div>
+		<div id="comments" class="tab">
+			<div class="form"></div>
+			<div class="list"></div>
+		</div>						
+
+		
+	</div><!-- #project-content -->
+
+</div> <!-- left -->
+
+<div id="right">
+	<%= render 'favorable_form' %>
+	<% if current_user == @project.user %>
+	<div class="tools">
+		<p><%= link_to 'Edit', edit_project_path(@project), :class => "edit" %></p>
+		<p><%= link_to '更新你的项目', project_update_path(@project), :remote => :true, :class => "button rounded-corners add_update" %></p>
+	</div>
+	<% end %>
+	
+	<%= render 'utils' %>
+</div>
+

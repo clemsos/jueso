@@ -1,0 +1,24 @@
+<h1>编辑项目</h1>
+
+<% if @project.state == 'unpublished' %>
+
+<span class="status <%= @project.state %>">
+	<%= @project.state %>
+</span>
+
+<%= render 'edit_form' %>
+
+<% else %>
+
+<h3><%= @project.title %></h3>
+
+<span class="status <%= @project.state %>">
+	<%= @project.state %>
+</span>
+
+<p><%= link_to 'Your project has been published here', @project, :class => 'button' %></p>
+
+<% end %>
+
+
+<%= link_to 'All projects', projects_path %>

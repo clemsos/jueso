@@ -1,0 +1,8 @@
+<div class="files">
+	<%= form_for(@user, :html => { :multipart => true, :class => "upload" }, :remote => true) do |f| %>
+			<%= f.file_field :avatar, :class => "upload" %>
+	  	<div>Upload files</div>
+	<% end %>
+</div>
+<div id="show_pic"></div>
+<div id="show_crop"></div>

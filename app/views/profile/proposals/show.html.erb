@@ -1,0 +1,53 @@
+<p id="notice"><%= notice %></p>
+
+<div id="left" class="proposal">
+<h2><%= @proposal.title %></h2>
+
+<h4>Description:</h4>
+<p><%= @proposal.description %></p>
+
+<h4>Rewards:</h4>
+<p>	<%= @proposal.rewards %></p>
+
+<h4>More about the proposal:</h4>
+<p>	<%= @proposal.more %></p>
+
+</div>
+
+<div id="right">
+	
+	<div>
+		<h4>Author : <%= link_to( (@proposal.user.username), user_path(@proposal.user)) %></h4>	
+		<h4>Purpose: <%= @proposal.money %> 元</h4>
+
+		<% unless @proposal.categories.empty? %>
+		  <h4>Tag: <%= @proposal.category_list %> </h4>
+		<% end %>
+	
+		<div class="flash notice">
+		
+		<div id="proposal-utils">
+			<h3>Status</h3>
+			<p> Your project is <%= @proposal.state %></p>
+			<span class="status <%= @proposal.state %>">
+				<% if (@proposal.state == 'approved')  then %>
+
+					<%= link_to  '创建你的项目', 
+					new_profile_proposal_project_path(@proposal),
+					:title => 'title' %>
+					
+				<% else %>
+					<%= @proposal.state %>
+				<% end %>
+			</span>
+		</div>
+		</div>
+		<p><%= link_to 'Delete this project', proposals_path, :confirm => 'Do you really want to delete it?', :method => :delete , :class => 'delete'%></p>
+
+
+		
+		
+
+	</div>
+</div>
+

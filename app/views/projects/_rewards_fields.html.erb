@@ -1,0 +1,12 @@
+  <div class="field">
+    <%= f.label :amount,  "Amount" %><br />
+	From
+    <%= f.text_field :amount_min, :class => 'duan' %>
+	to
+	<%= f.text_field :amount_max, :class => 'duan' %>
+  </div>
+  <div class="field">
+    <%= f.label :description, "Description" %><br />
+    <%= f.text_area :description, :rows => 3, :class => 'short' %>
+	<%= f.link_to_remove "Remove this reward" %>
+  </div>

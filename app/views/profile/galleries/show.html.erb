@@ -1,0 +1,7 @@
+<p id="notice"><%= notice %></p>
+
+<h2> <%= @gallery.title %> </h2>
+<p><%= @gallery.description %></p>
+
+<%= link_to 'Edit', edit_profile_gallery_path(:id => @gallery.id) %> |
+<%= link_to 'Back', profile_galleries_path %>

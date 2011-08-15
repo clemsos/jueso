@@ -1,0 +1,65 @@
+<% content_for :head do %>
+<%= javascript_include_tag 'jquery.min', 'jquery.dataTables.min', 'rails.js' %>
+<% end %>
+
+<% content_for :scripts do %>
+<script type="text/javascript">
+$('.table').dataTable();
+</script>
+<% end %>
+
+<h2>My proposals</h2>
+
+<table class="table">
+	<thead>
+	  <tr>
+	    <th>Title</th>
+	    <th>Description</th>
+	    <th>Category</th>
+	    <th>Status</th>
+	    <th>Tools</th>
+	  </tr>
+	</thead>
+	<tbody>
+<% @proposals.each do |proposal| %>
+  <tr>
+	
+    <td><h4><%= link_to proposal.title, profile_proposal_path(proposal) %></h4></td>
+    <td><%= proposal.description %></td>
+    <td><%= proposal.category_list %></td>
+    <td>
+		<% if proposal.state != 'approved' %>
+		<span class="status <%= proposal.state %>">
+			<%= proposal.state %>
+		</span>
+		<% else %>
+			<% if proposal.projects.exists?  then %>
+				<%= link_to  'Show project', profile_project_path(proposal.projects) %>
+				<% proposal.projects.each do |project| %>
+					<span class="status <%= project.state %>">
+						<%= project.state %>
+					</span>
+				<% end %>
+			<% else %>
+			<span class="status approved"><%= link_to  'Start!', new_profile_proposal_project_path(proposal) %></span>
+			<% end %>
+		<% end %>
+	</td>
+	<td>
+	<ul class="tools">
+		<li><%= link_to 'Show', profile_proposal_path(proposal), :class =>"show" %></li>	
+		<% if (proposal.state != 'approved')  then %>
+		
+	    <li><%= link_to 'Edit', edit_profile_proposal_path(proposal), :class =>"modify" %></li>
+	    <li><%= link_to 'Destroy', profile_proposal_path(proposal), :confirm => 'Are you sure?', :method => :delete, :class =>"destroy" %></li>
+		<% end %>
+  </tr>
+<% end %>
+</tbody>
+</table>
+
+<br />
+
+
+
+

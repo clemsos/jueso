@@ -1,0 +1,37 @@
+$('#avatar').dialog('open');
+$("#avatar").html("<%= escape_javascript(render('users/avatar')) %>");
+$('img.ajax-loader').remove();
+
+	function cropping_arrived(){
+		
+		$('#cropbox').Jcrop({
+			onChange: update_crop,
+			onSelect: update_crop,
+				aspectRatio: 1,
+				minSize: [<%= User::PREVIEW_WIDTH %>,<%= User::PREVIEW_HEIGHT %>]
+			});
+	};
+	
+	$('.upload').change(function(){
+		
+		$(this).append('<img src="/images/ajax-loader.gif" class="ajax-loader" />Uploading image...');
+		
+		$(this).ajaxSubmit({
+		  beforeSubmit: function(a,f,o) {
+			console.log('file subimtted');
+			var queryString = $.param(f); 
+			console.log('About to submit: \n\n' + queryString); 
+			return true; 
+		  },
+		  complete: function(XMLHttpRequest, textStatus) {
+			$('img.ajax-loader').remove();
+			$.ajax({
+				type: "GET",
+				url: "/remote/avatar_crop",
+				success: function(data){
+					       cropping_arrived();
+				         }
+				});
+		  },
+		 });
+		});

@@ -1,0 +1,35 @@
+<tr id ="feed-item-<%= feed_item.id %>" class="feed-item">
+  <td class="avatar">
+	<% if feed_item.user.avatar.exists? then %>
+		<%= link_to image_tag(feed_item.user.avatar.url(:mini)), feed_item.user %>
+	<% else %>
+		<%= link_to image_tag("/images/avatar-default.png", :size =>"100x100"), feed_item.user %>
+	<% end %>
+
+  </td>
+  <td class="micropost">
+
+	<span class="user">
+      <h4>
+	<% if current_user?(feed_item.user) then %>
+		<span class="myself">我自己</span>
+	<% else %>
+		<%= link_to feed_item.user.username, feed_item.user %>
+	<% end %>	
+	</h4>
+    </span>
+
+    <span class="content"><%= feed_item.content %></span>
+    <span class="timestamp">
+      <p>Posted <%= time_ago_in_words(feed_item.created_at) %> ago.</p>
+    </span>
+  </td>
+  <% if current_user?(feed_item.user) %>
+  <td>
+    <%= link_to "delete", feed_item, :method => :delete,
+									:class => "deleteMicropost",
+                                     :confirm => "You sure?",
+                                     :remote => true %>
+  </td>
+  <% end %>
+</tr>

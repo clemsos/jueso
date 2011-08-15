@@ -1,0 +1,45 @@
+<% content_for :scripts do%>
+
+	<%= javascript_include_tag 'jquery.endless-scroll' %>
+
+	<script type="text/javascript" charset="utf-8">
+	
+		$('.projects-list').endlessScroll({
+		  fireOnce: true,
+		  fireDelay: 500,
+			ceaseFire: function(){
+			  return $('#infinite-scroll').length ? false : true;
+			},
+			callback: function(){
+			  $.ajax({
+				  url: '/projects',
+				  data: {
+					  last: $(this).attr('last')
+				  },
+				  dataType: 'script'
+				});
+			}
+		});
+	
+		//moneybar
+		$(".moneybar").each(function() {	
+			var values = $(this).text().split(' / ');
+			$(this).html('');
+			var percent = Math.round((values[0]/values[1])*100);
+			$(this).before('<p class="percent">' + percent + ' %</p><div class="clear"></div>');
+			$(this).progressbar({ value: percent });
+		})
+		
+	</script>
+
+<%end %>
+
+<h1>觉项目</h1>
+
+<% unless @projects.blank?%>
+  <div class='projects-list' last="<%=@projects.to_a.last.created_at %>">
+    	<%=render :partial => "shared/project", :collection => @projects%>
+    <div id="infinite-scroll"></div>
+  </div>
+<% end %>
+

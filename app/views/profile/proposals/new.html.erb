@@ -1,0 +1,11 @@
+<% content_for :scripts do%>
+<%= javascript_include_tag 'jquery.timepicker' %>
+<% end %>
+
+<%= render :partial=>'proposals/header_prop' %>
+
+<div id="submit">
+	<h1>Submit your project</h1>
+	<%= render 'form' %>
+</div>
+

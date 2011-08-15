@@ -1,0 +1,8 @@
+/* Eliminate the comment by fading it out */
+// $('#feed-item-<%= @micropost.id %>').fadeOut();
+// alert('deleted');
+
+//console.log($('#feed-item-<%= @micropost.id %>'));
+jQuery(document).ready(function($) {
+	$('#feed-item-<%= @micropost.id %>').fadeOut();
+})

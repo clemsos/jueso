@@ -1,0 +1,5 @@
+<%= form_for current_user.favorites.build(:project_id => @project.id),
+             :remote => true do |f| %>
+  <div><%= f.hidden_field :project_id %></div>
+  <div class="actions"><%= f.submit "Add to favorite!", :class =>'favbutton addtofav' %></div>
+<% end %>

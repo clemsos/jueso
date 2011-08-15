@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+	<head>
+		<% javascript_include_tag(:defaults) %>
+		<%= render :partial => 'layouts/stylesheets' %>
+		<%= yield :head %>
+		<%= stylesheet_link_tag 'profile', :media => 'screen' %>
+	</head>
+	<body>
+	<% if user_signed_in? %> 
+		<%= render :partial => 'layouts/user_menu' %>
+	<% end %>		
+
+	<div id="wrap">
+		<section id='content'>
+			<% @user = current_user %>
+			<%= render :partial => 'users/user_header' %>
+    			<%= yield %>
+			<div class='clear' />
+			</div>
+
+	</section>
+		
+ 	<%= render :partial => 'layouts/footer' %>
+	<%= render :partial => 'layouts/bottom' %>
+	
+	</div><!-- #wrap -->
+	
+	<%= debug(params) if Rails.env.development? %>
+	<%= session.inspect %>			
+	<%= yield :scripts %>
+
+</body>
+</html>

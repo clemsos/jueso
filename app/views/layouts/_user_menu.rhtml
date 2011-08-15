@@ -1,0 +1,34 @@
+<nav id="top-menu">
+<ul id="user_nav">  
+	<li><%= link_to "Back", root_path %></li>	
+   <% if user_signed_in? %>  
+	<li> Hi<%= link_to current_user.username, profile_path %>! </li>
+
+	
+<% if can? :create, Proposal %>
+	<li><%=link_to 'Proposals', profile_proposals_path %></li>
+	<li><%=link_to 'Projects', profile_projects_path %></li>
+<% end %>
+
+<% if can? :create, Gallery %>
+	<li><%=link_to 'Galleries', profile_galleries_path %></li>
+<% else %>
+	<li></li>
+	<li>
+	<%= if current_user.change_role.empty? 
+			link_to 'Become a special member', new_profile_change_role_path
+		else 
+			link_to 'Membership requested', profile_change_role_path(current_user.change_role)
+		end %>
+<% end %>
+
+	
+	<li><%=link_to 'Edit info', edit_user_path(current_user) %></li>
+	<li class="signout"><%= link_to "Sign out", destroy_user_session_path %></li>
+   <% else %>  
+    <li><%= link_to "Sign up", new_user_registration_path %> 	or </li>
+    <li><%= link_to "Log in", new_user_session_path %></li>
+   <% end %>  
+</ul>
+</nav>
+<div id="push-down"></div>

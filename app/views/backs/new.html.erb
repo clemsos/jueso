@@ -1,0 +1,17 @@
+<h1>Support "<%=  @project.title %>!"</h1>
+
+<%= render 'form' %>
+
+<table id="rewards-list">
+	<tbody>
+	<% @project.rewards.each do |reward| %>
+		<tr class="reward">
+			<th>赞助 <%= reward.amount_min %> - <%= reward.amount_max %> ¥</th>
+			<th><%= reward.description %></th>
+		</tr>
+	<% end %>
+	</tbody>
+</table>
+
+
+<%= link_to 'Cancel', project_path(@project) %>

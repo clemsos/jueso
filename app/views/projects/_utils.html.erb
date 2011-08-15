@@ -1,0 +1,39 @@
+<section id="proj-utils">
+	<ul>
+		<li><span class="number">635</span><span class="legend">赞助者</span></li>
+		<li><span class="number">¥<%= @project.total %></span><span class="legend">赞助者总计<%= @project.money %>元</span></li>
+		<li>
+			<% if @project.state == 'expired' %>
+			<span class="number">Expired</span><span class="legend">For <%= distance_of_time_in_words(@project.deadline, Time.now) %></span>
+			<% else %>
+			<span class="number"><%= time_ago_in_words(@project.deadline) %></span><span class="legend">天</span>
+			<% end %>
+		</li>
+		<li>
+			<p><%= link_to '赞助项目（最少1元）', project_back_path(@project), :class => 'button rounded-corners' %></p>
+		</li>
+		<% for reward in @project.rewards %>
+			<li class="reward">	
+				<p><%= link_to "赞助"+reward.amount_min.to_s+"¥", project_back_path(@project), :my_amount => reward.amount_min %></p>
+				<p><%= reward.description %></p>
+			</li>
+		<% end %>
+		
+		<li>
+			<div id="user-thumb">
+				<h4><%= link_to @project.user.username, @project.user %></h4>
+				
+				<% if @project.user.avatar.exists? then %>
+					<%= link_to image_tag(@project.user.avatar.url(:large)), @project.user %>
+				<% else %>
+					<%= link_to image_tag("/images/avatar-default.png", :size =>"200x200"), @project.user %>
+				<% end %>
+			</div>
+		</li>
+		
+	</ul>
+	
+
+	
+	
+</section>

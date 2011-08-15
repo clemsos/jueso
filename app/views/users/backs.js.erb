@@ -1,0 +1,10 @@
+$("#backs").html("<%= escape_javascript(render('users/projects')) %>");
+
+//moneybar
+$(".moneybar").each(function() {	
+	var values = $(this).text().split(' / ');
+	$(this).html('');
+	var percent = (values[0]/values[1])*100;
+	$(this).before('<p>' + percent + ' %</p>');
+	$(this).progressbar({ value: percent });
+})

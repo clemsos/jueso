@@ -1,0 +1,72 @@
+<% content_for :scripts do %>
+<script> 
+	$(function() {
+			$( "#slider" ).slider({
+				value:100,
+				min: 0,
+				max: 25000,
+				step: 100,
+				slide: function( event, ui ) {
+					$( "#proposal_money" ).val( ui.value );
+				}
+			});
+			$( "#proposal_money" ).val($( "#slider" ).slider( "value" ) );
+		});
+	</script>
+<% end %>
+
+<%= form_for(@proposal) do |f| %>
+
+  <% if @proposal.errors.any? %>
+    <div id="error_explanation"  class="flash alert">
+      <p><%= pluralize(@proposal.errors.count, "error") %> prohibited this project from being saved:</p>
+
+      <ul>
+      <% @proposal.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<table>
+	<tbody>
+		<tr>
+			<th class="table-title"><%= f.label :title %></th>	
+			<th><%= f.text_field :title %></th>
+			<th class="help"><p>Chose a title</p></th>
+		</tr>
+		<tr>
+			<th class="table-title"><%= f.label :description %></th>
+			<th><%= f.text_area :description %></th>
+			<th class="help"><p>What do you like to create ?</p></th>
+		</tr>
+		<tr>
+		    <th class="table-title"><%= f.label :rewards %></th>
+			<th><%= f.text_area :rewards %></th>
+			<th class="help"><p>What rewards would you offer ?</p></th>
+		</tr>
+		<tr>	
+			<th class="table-title"> <%= f.label :money %></th>
+			<th> <div id='slider'></div><p>¥<%= f.text_field :money, :class => 'money' %></p></th>
+			<th class="help"><p>What rewards would you offer ?</p></th>
+		</tr>
+		<tr>
+			<th class="table-title"> <%= f.label :categories %></th>
+			<th> <%= select( "proposal", "category_list", mycats ) %></th>
+			<th class="help"><p>Which category ?</p></th>
+		</tr>
+		<tr>
+			<th class="table-title"><%= f.label :more %></th>
+			<th><%= f.text_area :more %></th>
+			<th class="help"><p>Where can we find more about your project ?</p></th>
+		</tr>
+		<tr>
+			<th></th>
+			<th><%= link_to 'Cancel', projects_path, :class => 'button cancel'  %></th>
+			<th><%= f.submit %></th>
+		</tr>
+	</tbody>
+</table>
+<% end %>

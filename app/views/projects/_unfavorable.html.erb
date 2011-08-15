@@ -1,0 +1,5 @@
+<%= form_for current_user.favorites.find_by_project_id(@project),
+             :html => { :method => :delete },
+             :remote => true do |f| %>
+  <div class="actions"><%= f.submit "Unfavorite", :class => 'favbutton removefav' %></div>
+<% end %>

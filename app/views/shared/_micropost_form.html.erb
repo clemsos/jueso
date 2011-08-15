@@ -1,0 +1,9 @@
+<%= form_for [:profile,@micropost], :remote => true, :validate => true  do |f| %>
+  <%= render 'shared/error_messages', :object => f.object %>
+  <div class="field">
+    <%= f.text_area :content, :size => "2x10"  %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

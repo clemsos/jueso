@@ -1,0 +1,35 @@
+<script type="text/javascript" charset="utf-8">
+  var adapter = <%= @adapter || 1 %>;
+	
+	function update_crop(coords) {
+		var rx = <%= Upload::PREVIEW_WIDTH %>/coords.w;
+		var ry = <%= Upload::PREVIEW_HEIGHT %>/coords.h;
+	
+	  jQuery('#preview').css({
+	    width: Math.round(rx * <%= @width %> /adapter) + 'px',
+	    height: Math.round(ry * <%= @height %> /adapter) + 'px',
+	    marginLeft: '-' + Math.round(rx * coords.x) + 'px',
+	    marginTop: '-' + Math.round(ry * coords.y) + 'px'
+	  });
+	
+	  jQuery("#crop_x").val(Math.round(coords.x * adapter));
+	  jQuery("#crop_y").val(Math.round(coords.y * adapter));
+	  jQuery("#crop_w").val(Math.round(coords.w * adapter));
+	  jQuery("#crop_h").val(Math.round(coords.h * adapter));
+	
+	}
+</script>
+
+<%= custom_img_tag(@upload, @width, @height, "cropbox") %>
+
+<%= form_for ([@upload]), :html => { :id => "crop_form"} do |f| %>
+  <% for attribute in [:crop_x, :crop_y, :crop_w, :crop_h] %>
+    <%= f.hidden_field attribute, :id => attribute %>
+  <% end %>
+  <p><%= f.submit "Crop", :id => "crop_submit" %></p>
+<% end %>
+
+<h4>Preview:</h4>
+<div style="width:<%= Upload::PREVIEW_WIDTH %>px; height:<%= Upload::PREVIEW_HEIGHT %>px; overflow:hidden">
+	<%= custom_img_tag(@upload, @width, @height, "preview") %>
+</div>
