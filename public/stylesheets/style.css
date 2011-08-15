@@ -36,7 +36,7 @@ body {
 	font-size:75%;
 	font-family: 微软雅黑, ff-dagny-web-pro-1, ff-dagny-web-pro-2, sans-serif; 
 	color: #222;
-	background:#000;
+	background:url('../images/bg.png');
 }
 
 html>body { font-size: 12px; }
@@ -74,7 +74,7 @@ a.edit { background: url("../images/edit.gif") no-repeat scroll 0 top transparen
 /* basic */
 a {color:#727272; text-decoration: none; }
 #content { background:#fff }
-#user-content, #project-content {background:#fff}
+#user-content, #project-content {background:#fff; min-height:300px}
 
 /* == error handling == */
 .error {
@@ -96,7 +96,6 @@ a.active { color:#000; font-weight:bold; }
 .field {
 	clear:both;
 }
-
 
 #loading {
 	display:none;
@@ -688,6 +687,7 @@ div.home {
 div.feature { clear:both; background:transparent; }
 div.slideshow { margin:10px; height:350px}
 nav.feat-utils { float:right; clear:both; margin-top:5px; z-index:1; position:relative; }
+
 nav.feat-utils a {
 	background: url("../images/slider-nav.png") no-repeat scroll 0 bottom transparent;
     border: medium none;
@@ -707,8 +707,34 @@ nav.feat-utils a.prev{ background-position:center center; }
 #thumbs li.activeSlide { background:yellow; }
 #thumbs li { float:right; background:black; width:10px; height:10px; margin-right:10px; position:relative; top:-30px; right:20px; text-indent: -9000px; z-index:99999; }
 
-.home #projects { background:#fff; position:relative; top:-70px }
+.home #projects { background:#fff; }
+.home #projects h2 a { 
+	background: url("../images/home_proj.png") no-repeat scroll 0 bottom transparent;
+	border: medium none;
+	display: block;
+	margin-right:10px;
+	text-indent: -9000px;
+	}
 
+.home #news .comments{float:left; width:150px}
+.home #news h4 { 
+	background: url("../images/home_now.png") no-repeat scroll 0 top transparent;
+	border: medium none;
+	display: block;
+	margin-right:10px;
+	text-indent: -9000px;
+	height:75px;
+}
+.home #news p span.time { color:#ccc }
+.home #news .comment { 	
+	
+}
+
+.home #news .comment li:first {
+	background:#ccc;
+}
+
+.home #news div {float:left; margin-left:10px }
 
 /*
 6. Features
