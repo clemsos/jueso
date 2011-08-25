@@ -36,4 +36,5 @@ production:
   pool: 5
   username: jueso
   password: 123.qwe
-  socket: /tmp/mysql.sock
+  host: localhost
+  
