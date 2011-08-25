@@ -7,9 +7,19 @@ class User < ActiveRecord::Base
          :validatable, :email_regexp => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   
 
+   before_create :setup_role, :unique_file_name
+   before_validation :beta_invited?
+
+   def beta_invited?
+      unless %w{betalist}.include? email
+        errors.add :email, "is not on the beta list"
+      end
+   end
+         
         
 validates_presence_of :email
-validates_uniqueness_of :username, :email, :alias
+validates_uniqueness_of :username, :email
+validates_uniqueness_of :alias, :on => :update
 validates_presence_of :password, :on => :create
 validates_presence_of :username, :with => /^[-\w\._@]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or .-_@" 
 validates :username, :presence => true, :length => { :maximum => 40 }
@@ -18,11 +28,7 @@ validates :email, :presence => true, :email_format => true
 #categories
 acts_as_taggable_on :skills
 
-
-  default_scope :order => 'users.created_at DESC'
-  #scope :with_role, lambda{|role_name| includes(:role).where(:roles => {:name => role_name}) }
-  
-  #scope :with_role, lambda{ |role| joins(:roles).where(:roles => {:name => role}) }
+default_scope :order => 'users.created_at DESC'
 
  def self.with_role(role_name)
     Role.where(:name => role_name).first.users # hope title is validated uniq
@@ -62,7 +68,7 @@ acts_as_taggable_on :skills
                     :processors => [:cropper]
                   
                     
-  validates_attachment_presence :avatar
+#  validates_attachment_presence :avatar
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => [ 'image/jpeg', 'image/png', 'image/pjpeg', 'image/gif','image/png' ]
   
@@ -135,11 +141,7 @@ acts_as_taggable_on :skills
   def role
     roles.first
   end
-  
-  #scope :admins, proc {|role| where(:name => 'admin') }
 
-  before_create :setup_role, :unique_file_name
-  
   
   private
   

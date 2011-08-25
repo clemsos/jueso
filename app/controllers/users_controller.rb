@@ -46,6 +46,7 @@ class UsersController < ApplicationController
     # POST /users.xml
     def create
       @user = User.new(params[:user])
+      # @user.alias = Array.new(9){rand 10}.join
        
       respond_to do |format|
         if @user.save

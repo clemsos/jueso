@@ -19,4 +19,10 @@ module UsersHelper
        image_tag avatar.url(:original), :id => id
      end
    end
+   
+   
+   #def betalist
+  #betalist = 'admin@gmail.com'
+   #end
+   
 end
