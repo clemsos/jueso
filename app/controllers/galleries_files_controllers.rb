@@ -6,3 +6,4 @@ class GalleriesFilesController < ApplicationController
     @gallery = Gallery.find(params[:gallery_id])
     @gallery.addfile!(@upload)
   end
+end
