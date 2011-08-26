@@ -19,5 +19,9 @@ class PagesController < ApplicationController
     def faq
       @title = "FAQ"
     end
+    
+    def temp
+      render :layout => 'temp'
+    end
       
 end
