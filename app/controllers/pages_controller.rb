@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   
     def home
+      authenticate_user!
       @title = "Home"
       @users = User.all(:limit => 7)
       @projects = Project.all(:limit => 4)
