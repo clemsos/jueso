@@ -15,3 +15,4 @@ class ProptoprojsController < ApplicationController
       end
     end
   end
+end
