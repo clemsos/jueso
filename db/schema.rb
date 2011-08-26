@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110812085528) do
+ActiveRecord::Schema.define(:version => 20110826065011) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.integer  "resource_id",   :null => false
@@ -56,6 +56,13 @@ ActiveRecord::Schema.define(:version => 20110812085528) do
 
   add_index "backs", ["project_id"], :name => "index_backs_on_project_id"
   add_index "backs", ["user_id"], :name => "index_backs_on_user_id"
+
+  create_table "beta_invites", :force => true do |t|
+    t.string   "email"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "change_roles", :force => true do |t|
     t.string   "real_name"

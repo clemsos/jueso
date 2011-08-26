@@ -7,17 +7,21 @@ class User < ActiveRecord::Base
          :validatable, :email_regexp => /^([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})$/i
   
 
-   before_create :setup_role, :unique_file_name
+   before_create :setup_role
    before_validation :beta_invited?
 
    def beta_invited?
-      unless %w{betalist}.include? email
-        errors.add :email, "is not on the beta list"
-      end
+     unless BetaInvite.exists?(:email=>email)
+          errors.add :email, "is not on our beta list"  
+     end
+         
+    #  unless %w{betalist}.include? email
+    #    errors.add :email, "is not on the beta list."
+    #  end
    end
          
         
-validates_presence_of :email
+
 validates_uniqueness_of :username, :email
 validates_uniqueness_of :alias, :on => :update
 validates_presence_of :password, :on => :create
@@ -72,6 +76,7 @@ default_scope :order => 'users.created_at DESC'
   validates_attachment_size :avatar, :less_than => 5.megabytes
   validates_attachment_content_type :avatar, :content_type => [ 'image/jpeg', 'image/png', 'image/pjpeg', 'image/gif','image/png' ]
   
+  before_post_process :unique_file_name
   after_update :reprocess_avatar, :if => :cropping?
   
   def cropping?

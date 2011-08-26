@@ -25,4 +25,10 @@ module UsersHelper
   #betalist = 'admin@gmail.com'
    #end
    
+  # @betalist = {
+  #   'clement@jue.so',
+  #   'clement,renaud@gmail.com',
+  #   'rain@jue.so'
+  #   }
+   
 end
