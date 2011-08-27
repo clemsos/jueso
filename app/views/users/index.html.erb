@@ -1,9 +1,9 @@
 <h1>Listing users</h1>
-<%= will_paginate %>
+<%= paginate @users %>
 <ul class="users">
   <% @users.each do |user| %>
 	<%= render 'shared/user', :user => user %>
   <% end %>
 </ul>
 <div class="clear"></div>
-<%= will_paginate %>
+<%= paginate @users %>

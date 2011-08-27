@@ -4,13 +4,14 @@ gem 'rails', '3.0.9'
 gem 'mysql2', '< 0.3'
 
 # Create admin part
-gem 'activeadmin', :git => "https://github.com/gregbell/active_admin.git"
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git', :ref => '811f286fda3b6dfa91aa'
 gem "cancan"
 
 #Users
 gem 'devise'
 
-gem 'will_paginate'
+# gem 'will_paginate'
+gem 'kaminari'
 gem "ckeditor", "~> 3.6.0"
 
 gem 'client_side_validations', :git => 'https://github.com/bcardarella/client_side_validations.git'

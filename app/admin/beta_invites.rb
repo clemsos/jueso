@@ -1,3 +1,2 @@
-ActiveAdmin.register BetaInvite do
-  
+ActiveAdmin.register BetaInvite do  
 end

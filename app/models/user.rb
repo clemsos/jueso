@@ -34,6 +34,7 @@ acts_as_taggable_on :skills
 
 default_scope :order => 'users.created_at DESC'
 
+
  def self.with_role(role_name)
     Role.where(:name => role_name).first.users # hope title is validated uniq
   end

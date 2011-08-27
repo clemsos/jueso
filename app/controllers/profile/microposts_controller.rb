@@ -6,7 +6,7 @@ class Profile::MicropostsController < ProfileController
   def create
       @micropost  = current_user.microposts.build(params[:micropost])
       @user = current_user
-      @feed_items = current_user.feed.paginate(:page => params[:page])
+      @feed_items = current_user.feed.page params[:page]
       @projects = current_user.projects.all
       @proposals = current_user.proposals.all
       

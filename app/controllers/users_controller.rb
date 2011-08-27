@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   # GET /users.xml
   def index
     @title = "All users"
-    @users = User.paginate(:page => params[:page])
+    @users = User.with_role('Member').page params[:page] #User.paginate(:page => params[:page])
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @users }
@@ -16,9 +16,9 @@ class UsersController < ApplicationController
 
     def show
       @user = User.find(params[:id])
-      @microposts = @user.microposts.paginate(:page => params[:page])
-      @projects = @user.projects.paginate(:page => params[:page])
-      @backs = @user.backs.paginate(:page => params[:page])
+      @microposts = @user.microposts.page params[:page]
+      @projects = @user.projects.page params[:page]
+      @backs = @user.backs.page params[:page]
             
       respond_to do |format|
         format.html # show.html.erb

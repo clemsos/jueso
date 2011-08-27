@@ -60,7 +60,7 @@ $('a[data-remote="true"]').click(function(e){
 			  <table class="microposts" summary="User microposts">
 			    <%= render @microposts %>
 			  </table>
-			  <%= will_paginate @microposts %>
+			  <%= paginate @microposts %>
 			<% end %>
 		</div>
 		<div class="tab" id="user-projects"></div>
