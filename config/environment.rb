@@ -11,7 +11,7 @@ Jueso::Application.configure do
    config.cache_classes = false
    
    # Config email
-   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
    config.action_mailer.raise_delivery_errors = true
 
    # set delivery method to :smtp, :sendmail or :test

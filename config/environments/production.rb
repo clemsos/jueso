@@ -8,6 +8,7 @@ Jueso::Application.configure do
   # Full error reports are disabled and caching is turned on
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
+#  config.action_controller.perform_caching = false
 
   # Specifies the header that your server uses for sending files
   config.action_dispatch.x_sendfile_header = "X-Sendfile"
@@ -46,4 +47,9 @@ Jueso::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+    
+  #sen email from localhost
+  config.action_mailer.default_url_options = { :host => 'jue.so' }
+  
+  
 end

@@ -39,5 +39,7 @@ Jueso::Application.configure do
     :password       => '12345678'
   }
   
+  #sen email from localhost
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
 
