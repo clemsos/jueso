@@ -1,9 +1,8 @@
 GIT
   remote: git://github.com/gregbell/active_admin.git
-  revision: 811f286fda3b6dfa91aa172b2471ee56346d539d
-  ref: 811f286fda3b6dfa91aa
+  revision: 0f8aa21f122516c7f0ca17146820feabaf57d793
   specs:
-    activeadmin (0.2.2)
+    activeadmin (0.3.0)
       devise (>= 1.1.2)
       fastercsv
       formtastic (>= 1.1.0)

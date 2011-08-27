@@ -4,7 +4,7 @@ gem 'rails', '3.0.9'
 gem 'mysql2', '< 0.3'
 
 # Create admin part
-gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git', :ref => '811f286fda3b6dfa91aa'
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem "cancan"
 
 #Users
