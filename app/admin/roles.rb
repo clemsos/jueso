@@ -1,3 +1,4 @@
 ActiveAdmin.register Role do
-  menu :parent => 'Users'  
+  menu :parent => 'Users'
+  #test
 end
