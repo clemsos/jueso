@@ -50,6 +50,7 @@ Jueso::Application.configure do
     
   #sen email from localhost
   config.action_mailer.default_url_options = { :host => 'jue.so' }
+  config.action_mailer.delivery_method = :sendmail
   
   
 end
