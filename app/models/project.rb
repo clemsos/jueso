@@ -64,7 +64,6 @@ class Project < ActiveRecord::Base
     end
   end
     
-  default_scope without_state(:unpublished)
   scope :published, without_state(:unpublished)
   scope :funded, with_state(:funded)
   scope :unpublished, with_state(:unpublished)

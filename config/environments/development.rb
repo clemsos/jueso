@@ -23,7 +23,7 @@ Jueso::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
   
-# Config email
+  # Config email
   config.action_mailer.raise_delivery_errors = true
   
   # set delivery method to :smtp, :sendmail or :test
@@ -39,7 +39,7 @@ Jueso::Application.configure do
     :password       => '12345678'
   }
   
-  #sen email from localhost
+  #send email from localhost
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 end
 
