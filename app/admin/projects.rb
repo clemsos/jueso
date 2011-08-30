@@ -39,7 +39,7 @@ ActiveAdmin.register Project do
   
     column "Deadline"do |project|
       if project.state != 'expired'
-        time_ago_in_words(project.description)
+        time_ago_in_words(project.deadline)
       else
         status_tag 'expired'
       end

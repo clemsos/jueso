@@ -28,7 +28,7 @@ class Project < ActiveRecord::Base
   
   accepts_nested_attributes_for :rewards, :reject_if => lambda { |a| a[:description].blank? }, :allow_destroy => true
 
-  attr_accessible :rewards_attributes, :title, :description, :video_link, :money, :deadline
+  attr_accessible :rewards_attributes, :title, :description, :video_link, :money, :deadline, :state_event
   
   # workflow  
   state_machine :initial => :unpublished do

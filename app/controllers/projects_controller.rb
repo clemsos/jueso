@@ -6,7 +6,7 @@ class ProjectsController < ApplicationController
   respond_to :html, :js
   def index
   	last = params[:last].blank? ? Time.now + 1.second : Time.parse(params[:last])
-  	@projects = Project.feed(last)
+  	@projects = Project.published.feed(last)
   end
   
   def category
@@ -20,7 +20,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @total = @project.total
     @back = Comment.new(params[:back])
-    @comments = @project.comments.paginate(:page => params[:page])
+    @comments = @project.comments.page params[:page]
     
     # authorize! :show, @project
     respond_to do |format|
@@ -30,8 +30,7 @@ class ProjectsController < ApplicationController
   end
   
   def backs
-    #@back = Back.new(params[:back])
-    @backs = Project.find(params[:project_id]).backs.paginate(:page => params[:page])
+    @backs = Project.find(params[:project_id]).backs.page params[:page]
     respond_to do |format|
        format.js
      end
@@ -40,7 +39,7 @@ class ProjectsController < ApplicationController
   def comments
     @project = Project.find(params[:project_id])
     @comment = Comment.new(params[:back])
-    @comments = Project.find(params[:project_id]).comments.paginate(:page => params[:page])
+    @comments = Project.find(params[:project_id]).comments.page params[:page]
     
     respond_to do |format|
        format.js

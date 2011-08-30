@@ -17,6 +17,7 @@ $('.table').dataTable();
 	    <th>Description</th>
 	    <th>Money</th>
 		<th>Updates</th>
+		<th>State</th>
 	    <th>Tools</th>
 	  </tr>
 	</thead>
@@ -26,6 +27,7 @@ $('.table').dataTable();
     <td><h3><%= link_to project.title, edit_profile_project_path(project) %></h3></td>
     <td><%= project.description %></td>
 	<td><p><%= project.total %> /  <%= project.money %></p></td>
+	<td><p><%= project.state %></p></td>
     <td><%= link_to 'Add an update',  new_profile_project_update_path(project) %></td>
     <td>
 		<ul class="tools">

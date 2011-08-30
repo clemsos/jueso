@@ -2,6 +2,14 @@
 <h3><%= @project.total %> / <%= @project.money %>元 in <%= time_ago_in_words(@project.deadline) %></h3>
 <div class="col1">
 
+<% form_for([:admin, @project]) do |f| %>
+	<p>
+ 	<%= f.label :state %><br />
+    <%= f.collection_select :state_event, @project.state_transitions, :event, :human_to_name, :include_blank => @project.state %>
+  </p>
+  <p><%= f.submit 'Update' %></p>
+<% end %>
+
 <%= @project.description %>
 <%= @project.video_link %>
 </div>
@@ -19,6 +27,7 @@
 </div>
 
 <div class="col3">
+	
 	<h4> By <%= link_to @project.user.username, admin_user_path(@project.user) %></h4>
 	<div id="user-thumb">	
 		<% if @project.user.avatar.exists? then %>

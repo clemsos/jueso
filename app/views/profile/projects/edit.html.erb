@@ -8,6 +8,11 @@
 
 <%= render 'edit_form' %>
 
+
+<% elsif @project.state == 'expired' %>
+
+	<span class="<%= @project.state %>"> Project expired </p>
+
 <% else %>
 
 <h3><%= @project.title %></h3>
