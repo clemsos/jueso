@@ -16,6 +16,8 @@ gem "ckeditor", "~> 3.6.0"
 
 gem 'client_side_validations', :git => 'https://github.com/bcardarella/client_side_validations.git'
 
+#email
+gem 'delayed_job'
 
 # Ajax JS
 gem 'remotipart', '~> 0.4'

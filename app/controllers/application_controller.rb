@@ -5,6 +5,14 @@ class ApplicationController < ActionController::Base
   
   include SessionsHelper
 
+  before_filter :set_timezone
+
+  def set_timezone
+    min = request.cookies["time_zone"].to_i
+     Time.zone = ActiveSupport::TimeZone[-min.minutes]
+  end
+  
+  
   rescue_from CanCan::AccessDenied do |exception|
     flash[:alert] = exception.message
     deny_access

@@ -1,7 +1,7 @@
 Jueso::Application.routes.draw do 
   
   #Home page
-  root :to => "pages#temp"
+  root :to => "pages#home"
   
   #Static pages
   match '/contact', :to => 'pages#contact'
