@@ -7,6 +7,7 @@
 			dateFormat: 'y-mm-dd'
 		});
 
+	/*
 		$( ".slider" ).slider({
 			range: true,
 			min: 0,
@@ -17,6 +18,7 @@
 				$(this).next().find('.max').val( ui.values[ 1 ] );
 			}
 		});	
+		*/
 	
 	</script>
 	
@@ -69,11 +71,12 @@
 <tr>
 	<th>Rewards</th>
 	<th>
-<% f.fields_for :rewards do |builder| %>
-	<%= render "rewards_fields", :f => builder %>
-<% end %>
-<%= f.link_to_add "Add a reward", :rewards %>
-</th>
+		<% f.fields_for :rewards do |builder| %>
+			<li><%= render "rewards_fields", :f => builder %></li>
+		<% end %>
+		<%= f.link_to_add "Add a reward", :rewards %>
+		
+	</th>
 </tr>
 </table>
 

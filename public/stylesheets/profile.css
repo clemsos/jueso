@@ -133,6 +133,8 @@ background: url(profile/table/action_buy.gif) 0 -24px;
 }
 
 
+table input.short { width:60px; }
+
 
 
 /* product table 
