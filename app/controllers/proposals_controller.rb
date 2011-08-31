@@ -44,7 +44,7 @@ class ProposalsController < ApplicationController
     @proposal.destroy
 
     respond_to do |format|
-      format.html { redirect_to(proposals_url) }
+      format.html { redirect_to(profile_proposals_url) }
       format.xml  { head :ok }
     end
   end

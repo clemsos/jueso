@@ -42,7 +42,7 @@
 			</span>
 		</div>
 		</div>
-		<p><%= link_to 'Delete this project', proposals_path, :confirm => 'Do you really want to delete it?', :method => :delete , :class => 'delete'%></p>
+		<p><%= button_to 'Delete this project', @proposal, :confirm => 'Do you really want to delete it?', :method => :delete , :class => 'delete'%></p>
 
 
 		

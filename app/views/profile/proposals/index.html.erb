@@ -49,9 +49,8 @@ $('.table').dataTable();
 	<ul class="tools">
 		<li><%= link_to 'Show', profile_proposal_path(proposal), :class =>"show" %></li>	
 		<% if (proposal.state != 'approved')  then %>
-		
 	    <li><%= link_to 'Edit', edit_profile_proposal_path(proposal), :class =>"modify" %></li>
-	    <li><%= link_to 'Destroy', profile_proposal_path(proposal), :confirm => 'Are you sure?', :method => :delete, :class =>"destroy" %></li>
+	    <li><%= button_to 'Destroy', proposal, :confirm => 'Are you sure?', :method => :delete, :class =>"destroy" %></li>
 		<% end %>
   </tr>
 <% end %>

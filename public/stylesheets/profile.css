@@ -78,7 +78,10 @@ padding: 0.67em 19px 0.67em 0;
 .table .tools {
 	text-indent:-9000px;
 }
-.table a.destroy {
+.table .tools input {
+	text-indent:-9000px;
+}
+.table input.destroy, .table a.destroy {
 background: url(profile/table/action_delete.gif) no-repeat;
 display: block;
 float: left;
@@ -87,7 +90,7 @@ margin: 0 8px 0 0;
 width: 24px;
 }
 
-.table a:hover.destroy	{
+.table input:hover.destroy	{
 background: url(profile/table/action_delete.gif) 0 -24px;
 }
 
