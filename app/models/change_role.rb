@@ -11,7 +11,8 @@ class ChangeRole < ActiveRecord::Base
   
   state_machine :initial => :pending do
       state :pending, :rejected, :approved
-      after_transition :on => :approved, :do => :change_user_role
+      
+      after_transition :on => :accept, :do => :change_user_role
       
       event :reject do
         transition :pending => :rejected
@@ -19,7 +20,6 @@ class ChangeRole < ActiveRecord::Base
       
       event :accept do
         transition [:rejected,:pending] => :approved
-        
       end
   end
   
@@ -28,7 +28,8 @@ class ChangeRole < ActiveRecord::Base
   scope :pending, where(:state => 'pending')
   
   def change_user_role
-    User.where(:id => :user_id).first.role = :role
+    r = Role.where(:name => self.role).first.id
+    User.where(:id => self.user_id).first.role_ids = [r]
   end
 
 end

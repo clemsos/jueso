@@ -16,6 +16,14 @@
     
     <h4> More info </h4>
     <p><%= @change_role.more %></p>
+
+	<% form_for([:admin, @change_role]) do |f| %>
+		<p>
+	 	<%= f.label :state %><br />
+	    <%= f.collection_select :state_event, @change_role.state_transitions, :event, :human_to_name, :include_blank => @change_role.state %>
+	  </p>
+	  <p><%= f.submit 'Update' %></p>
+	<% end %>
 </div>
 
 <div class="col3">

@@ -37,7 +37,7 @@ ActiveAdmin.register User do
         if @projects.empty?
           '0'
         else
-          link_to @projects.count, admin_user_projects_path(user)
+        #  link_to @projects.count, admin_user_projects_path(user)
         end 
     end
     
