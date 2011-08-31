@@ -2,6 +2,8 @@ class Update < ActiveRecord::Base
   belongs_to :user
   belongs_to :project
   
+  default_scope :order => 'updates.created_at DESC'
+  
   has_attached_file :data,
                     :path => ":rails_root/public/uploads/:class/:id/:basename.:extension",
                     :url => "/uploads/:class/:id/:basename.:extension"

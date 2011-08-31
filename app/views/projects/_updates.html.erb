@@ -1,4 +1,5 @@
-<% @updates.each do |update| %>
-	<h3><%= update.title %></h3>
-	<p><%= raw update.body %></p>
-<% end %>
+<div class="list">
+	<% @updates.each do |update| %>
+		<%= render :partial=>"updates/update", :object => update %>
+	<% end %>
+</div>

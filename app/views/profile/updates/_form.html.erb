@@ -5,8 +5,9 @@
   <%= f.label :title %><br />
   <%= f.text_field :title %>
    <%= f.label :body %><br />
-<%= f.cktext_area :body %>
+	<%= f.cktext_area :body %>
 </div>
+
 <div id="right">
 		<p><%= f.label :state %><br />
 	    <%= f.collection_select :state_event, @update.state_transitions, :event, :human_to_name, :include_blank => @update.state %>

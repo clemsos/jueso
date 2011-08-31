@@ -1,12 +1,25 @@
 $('#left').prepend('<div id="update"></div>');
 $("#update").html("<%= escape_javascript(render('updates/form')) %>");
 
+
+
 $("#update_submit").click(function(){
-	$('#new_update')		
+	$('#new_update')
+			.bind('ajax:beforeSend', toggleTopLoading)
+			
 			.bind('ajax:success', function(data, status, xhr) {
+				
 				//console.log(data)
+				$('#toploading').fadeOut('slow');
 				$('#update').fadeOut('slow', function() {
-					$('#left').prepend('<p class="succes">Project Updated</p>')
-				})
+					$('#left').prepend('<p class="succes">Project Updated</p>');
+				});
+				
+				/* Add the new update to the top of the comments list */
+				$("#updates .list").prepend("<%= escape_javascript(render(@update)) %>");
+
+				/* Highlight the new update */
+				$("#update-<%= @update.id %>").effect("highlight", {}, 3000);
+
 			})
 })

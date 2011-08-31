@@ -47,6 +47,7 @@ class Profile::UpdatesController <  ProfileController
   
    def show
      @update = Update.find(params[:id])
+    @project = Project.find(params[:project_id])
      respond_to do |format|
        format.html # show.html.erb
        format.xml  { render :xml => @project }

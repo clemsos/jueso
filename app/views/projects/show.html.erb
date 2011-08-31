@@ -3,6 +3,8 @@
 
 // toggleLoading function
 var toggleLoading = function() { $("#loading").toggle() };
+var toggleTopLoading = function() { $("#toploading").toggle() };
+
 
 function disableLink(e) {
 	$(this).addClass('disabled');
@@ -55,6 +57,7 @@ $(".moneybar").each(function() {
 <p><%= link_to @project.user.username, @project.user %></p>
 
 <div id='left'>	
+<div id="toploading"><img src="/images/ajax-loader.gif" class="ajax-loader" /></div>
 	<nav>
 		<ul id="project-nav">
 		<li><%= link_to '项目首页', '#', :class => "description" %></li>
@@ -64,7 +67,6 @@ $(".moneybar").each(function() {
 		</ul>
 	</nav>
 	<div class="clear"></div>
-	
 	<div id="project-content">
 		<div id="loading"><img src="/images/ajax-loader.gif" class="ajax-loader" /></div>
 		<div id="description" class="tab active">
@@ -87,7 +89,9 @@ $(".moneybar").each(function() {
 	<% if current_user == @project.user %>
 	<div class="tools">
 		<p><%= link_to 'Edit', edit_project_path(@project), :class => "edit" %></p>
-		<p><%= link_to '更新你的项目', project_update_path(@project), :remote => :true, :class => "button rounded-corners add_update" %></p>
+		<p><%= link_to '快更新项目', project_update_path(@project), :remote => :true, :class => "button rounded-corners add_update" %></p>
+		<p><%= link_to '加更新项目', new_profile_project_update_path(@project), :class => "button rounded-corners" %></p>
+		
 	</div>
 	<% end %>
 	

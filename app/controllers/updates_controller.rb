@@ -5,6 +5,7 @@ class UpdatesController < ApplicationController
     @project = Project.find(params[:project_id])
     @update = @project.updates.build(params[:update])
     @update.user_id = current_user.id
+    @update.state = 'published'
     
     respond_to do |format|
       if @update.save

@@ -97,7 +97,7 @@ a.active { color:#000; font-weight:bold; }
 	clear:both;
 }
 
-#loading {
+#loading, #toploading {
 	display:none;
 	margin-top: 50px;
     text-align: center;}
