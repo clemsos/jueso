@@ -88,7 +88,7 @@ $(".moneybar").each(function() {
 	<%= render 'favorable_form' %>
 	<% if current_user == @project.user %>
 	<div class="tools">
-		<p><%= link_to 'Edit', edit_project_path(@project), :class => "edit" %></p>
+		<p><%= link_to 'Edit', edit_profile_project_path(@project), :class => "edit" %></p>
 		<p><%= link_to '快更新项目', project_update_path(@project), :remote => :true, :class => "button rounded-corners add_update" %></p>
 		<p><%= link_to '加更新项目', new_profile_project_update_path(@project), :class => "button rounded-corners" %></p>
 		

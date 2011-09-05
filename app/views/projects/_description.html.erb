@@ -1,5 +1,5 @@
-<p>
-<%= image_tag '/images/video-default.jpg' %>
-<b>Video:</b><%= @project.video_link %>
-</p>
+<div class="video">
+<%= @project.video_link.html_safe %>
+</div>
+
 <p><%= @project.description %></p>

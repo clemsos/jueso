@@ -1,5 +1,9 @@
-<%= link_to 'Edit project', edit_profile_project_path(@project) %>
-<%= link_to 'View project', project_path(@project) %>
-<%= image_tag '/images/video-default.jpg' %>
-<b>Video:</b><%= @project.video_link %>
+<%= link_to 'Edit project', edit_profile_project_path(@project), :class =>'edit' %>
+<%= link_to 'View project', project_path(@project), :class =>'show' %>
+
+<div id="left">
+<%= @project.video_link.html_safe %>
+</div>
+<div id="right">
 <%= @project.description %>
+</div>

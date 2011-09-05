@@ -446,7 +446,6 @@ text-align:right;
 /* 5. Projects + Proposals
 ----------------------- */
 
-
 div.moneybar {
 	height:10px;
 	background:#ccc;
@@ -457,6 +456,7 @@ div.moneybar .ui-progressbar-value {
 	background:#000;
 	border:none;
 }
+
 
 /* Proposals */
 
@@ -500,9 +500,24 @@ div#money-slider {
 	margin-bottom:20px;
 }
 
-
 #searchaddress {
 	width:60%;
+}
+
+#tudou {
+	float:left; position:relative; margin-right:20px;
+}
+
+#tudou .tooltip {
+	position: absolute;
+	top: 70px;
+	left: -400px;
+	display: none;
+	text-align: center;
+	padding: 5px;
+	line-height:110%;
+	color:#000000;
+	background-color:whiteSmoke;
 }
 
 /* project index */
@@ -553,6 +568,11 @@ div#money-slider {
 
 
 /* single project */
+#project-content div.video {
+	text-align:center;
+	margin-top:15px;
+}
+
 #project-nav a {
 	float:left;
 	background:#000;

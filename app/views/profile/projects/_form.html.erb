@@ -1,0 +1,96 @@
+<% content_for :scripts do%>
+	<%= javascript_include_tag 'jquery.min','jquery-ui-1.8.14.custom.min','jquery.timepicker','nested_form' %>
+	<script type="text/javascript" charset="utf-8">	
+		// project form
+		$("#project_deadline").datetimepicker({
+			timeFormat: 'hh:mm:ss',
+			dateFormat: 'y-mm-dd'
+		});
+	
+		$("#tudou a").hover(
+		function() { $('#tudou .tooltip').toggle(); },
+		function() { $('#tudou .tooltip').toggle();}
+		);
+		
+		$("#tudou a").click( function() {
+			return false;
+		})
+	</script>
+	
+<% end %>
+
+<%= nested_form_for(@project) do |f| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<table>
+	<tbody>
+		<tr>
+			<th class="table-title"><%= f.label :title %></th>
+		    <th><h2><%= @project.title %></h2></th>
+		    <th class="help"></th>
+		</tr>
+		<tr>
+
+		    <th class="table-title"><%= f.label :money %></th>
+		    <th><h3><%= @project.money %></h3></th>
+		    <th class="help"></th>
+		</tr>
+		<tr>
+		  	<th class="table-title"><%= f.label :categories %></th>
+			<th><h3><%= @project.category_list %></h3></th>
+		    <th class="help"></th>
+		</tr>
+		<tr>
+		    <th class="table-title"><%= f.label :description %></th>
+		    <th><%= f.text_area :description %></th>
+		    <th class="help"></th>
+		</tr>
+		<tr>
+		    <th class="table-title"><%= f.label :video_link %></th>
+		    <th><%= f.text_field :video_link %></th>
+		    <th class="help">
+				<div id="tudou">
+					<p>To add a video from Tudou, follow the <a href="#" class="instructions">instructions</a></p>
+					<div class="tooltip">
+						<p>Copy the code from Tudou :</p>
+						<p><%= image_tag("help/tudou_03.png", :alt => "tudou 更多")  %></p>
+						<p><%= image_tag("help/tudou_07.png", :alt => "tudou copy html")  %></p>
+						<p>Paste the code in the "video" field </p>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</th>
+		</tr>
+		<tr>
+		    <th class="table-title"><%= f.label :deadline %></th>
+		    <th><%= f.text_field :deadline %></th>
+		    <th class="help"></th>
+		</tr>
+		<tr>
+			<th class="table-title">Rewards</th>
+			<th>
+		<%= f.fields_for :rewards do |builder| %>
+			<%= render "rewards_fields", :f => builder %>
+		<% end %>
+		<%= f.link_to_add "Add a reward", :rewards %>
+		</th>
+		</tr>
+	</tbody>
+</table>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
