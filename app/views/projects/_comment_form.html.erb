@@ -1,27 +1,3 @@
-<% content_for :scripts do%>
-
-<script type="text/javascript" charset="utf-8">
-console.log('lalalala');
-// ajax callbacks
-$('#comment_submit').click(function(e){
-	console.log('ajax binded');
-	$("#new_comment")
-		.bind('ajax:beforeSend', function(data, status, xhr) {
-			console.log('sending...');
-			})
-//		.bind('ajax:complete', toggleLoading)			
-		.bind('ajax:failure', function(data, status, xhr) {
-			console.log('failure')
-			
-		})
-		.bind('ajax:success', function(data, status, xhr) {
-			console.log('success')
-		})
-})
-
-</script>
-<% end %>
-
 <%= form_for([@project, @project.comments.build], :remote => :true) do |f| %>
 <% if @comment.errors.any? %>
   <div id="error_explanation">
@@ -42,6 +18,6 @@ $('#comment_submit').click(function(e){
   </div>
 
  <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Comment", :disable_with => "Saving..." %>
   </div>	
 <% end %>

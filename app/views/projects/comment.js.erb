@@ -1,3 +1,6 @@
+/* Prevent multiple posts */
+$('#comment_submit').attr("disabled", false).attr('value', 'Comment');;
+
 /* Add the new comment to the bottom of the comments list */
 $("#comments .list").prepend("<%= escape_javascript(render(@comment)) %>");
 
