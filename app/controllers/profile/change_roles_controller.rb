@@ -23,7 +23,7 @@ class Profile::ChangeRolesController < ProfileController
   end
   
   def show
-    @changerole = ChangeRole.where(:user_id => current_user.id).first
+    @changerole = ChangeRole.find(params[:id]) #where(:user_id => current_user.id).first
   end
     
 end

@@ -29,7 +29,7 @@ Jueso::Application.routes.draw do
   resources :microposts, :only => [:destroy]
   
   namespace :profile do
-      resources :change_roles
+      resources :change_roles, :only => [:create,:new,:show]
       resources :microposts, :only => [:create]
       resources :proposals, :only => [:show, :index]
       resources :projects, :only => [:show, :index, :edit] do
