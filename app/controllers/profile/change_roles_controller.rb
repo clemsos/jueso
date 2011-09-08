@@ -4,6 +4,9 @@ class Profile::ChangeRolesController < ProfileController
     @changerole = ChangeRole.new
   end
   
+  def thanks
+    @title = "Thanks"
+  end
   
   def create
     @changerole = ChangeRole.new(params[:change_role])
@@ -12,7 +15,7 @@ class Profile::ChangeRolesController < ProfileController
     respond_to do |format|
       
       if @changerole.save
-       format.html { redirect_to '/profile/thanks' }
+       format.html { redirect_to '/profile/change_roles/thanks' }
       else
         format.html { render :action => "new" }
       end

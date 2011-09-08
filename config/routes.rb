@@ -29,8 +29,7 @@ Jueso::Application.routes.draw do
   resources :microposts, :only => [:destroy]
   
   namespace :profile do
-    match "/thanks" => "profile#thanks"
-      resources :change_roles, :only => [:create, :new, :show]
+      resources :change_roles
       resources :microposts, :only => [:create]
       resources :proposals, :only => [:show, :index]
       resources :projects, :only => [:show, :index, :edit] do
@@ -74,6 +73,7 @@ Jueso::Application.routes.draw do
     match "comments", :to => "projects#comments", :as => 'comments'
     match "description", :to => "projects#description", :as => 'description'
   end 
+  
   get "/projects/cat/cloud", :to => "projects#category_cloud", :as => 'category_cloud'
   get 'projects/cat/:id' => 'projects#category', :as => :category
   resources :rewards
