@@ -31,12 +31,13 @@ Jueso::Application.configure do
 
   # these options are only needed if you choose smtp delivery
   config.action_mailer.smtp_settings = {
-    :address        => 'smtp.exmail.qq.com',
-    :port           => 25,
-    :domain         => 'www.jue.com',
-    :authentication => :login,
-    :user_name      => 'clement@jue.so',
-    :password       => '12345678'
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :domain               => 'www.jue.so',
+    :user_name            => 'juemailer@gmail.com',
+    :password             => 'JueStudio12345',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true
   }
   
   #send email from localhost
