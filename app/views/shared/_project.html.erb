@@ -1,8 +1,8 @@
 <article class="project">
-	<%  if project.video.empty? %>
-		<p> video </p>
-	<% else %>
+	<%  if project.video_link.empty? %>
 		<%= image_tag "/images/video-default.jpg", :size => '300x200' %>
+	<% else %>
+		<%= project.video_link %>
 	<% end %>
 	
 	<div class="content">
