@@ -36,7 +36,7 @@ Jueso::Application.configure do
   # config.action_controller.asset_host = "http://assets.example.com"
 
   # Disable delivery errors, bad email addresses will be ignored
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable threaded mode
   # config.threadsafe!
@@ -59,14 +59,14 @@ Jueso::Application.configure do
   config.action_mailer.smtp_settings = {
     :address        => 'smtp.exmail.qq.com',
     :port           => 25,
-    :domain         => 'www.jue.com',
+    :domain         => 'www.jue.so',
     :authentication => :login,
     :user_name      => 'clement@jue.so',
     :password       => '12345678'
   }
   
   #send email from localhost
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.default_url_options = { :host => 'www.jue.so' }
   
   
 end
