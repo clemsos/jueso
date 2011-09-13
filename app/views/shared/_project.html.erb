@@ -1,5 +1,9 @@
 <article class="project">
-	<%= image_tag "/images/video-default.jpg", :size => '300x200' %>
+	<%  if project.video.empty? %>
+		<p> video </p>
+	<% else %>
+		<%= image_tag "/images/video-default.jpg", :size => '300x200' %>
+	<% end %>
 	
 	<div class="content">
 		<h2><%= link_to project.title, project_path(project) %></h2>
