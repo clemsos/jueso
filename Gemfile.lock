@@ -220,6 +220,7 @@ DEPENDENCIES
   ckeditor (~> 3.6.0)
   client_side_validations!
   cucumber-rails
+  daemons
   delayed_job
   devise
   factory_girl_rails (= 1.0)
