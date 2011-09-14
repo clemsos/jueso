@@ -18,6 +18,7 @@ gem 'client_side_validations', :git => 'https://github.com/bcardarella/client_si
 
 #email
 gem 'delayed_job'
+gem "daemons" #, "= 1.0.10"
 
 # Ajax JS
 gem 'remotipart', '~> 0.4'
