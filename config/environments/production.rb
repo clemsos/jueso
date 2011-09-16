@@ -55,6 +55,9 @@ Jueso::Application.configure do
   # set delivery method to :smtp, :sendmail or :test
   config.action_mailer.delivery_method = :smtp
 
+  #send email from localhost
+   config.action_mailer.default_url_options = { :host => 'www.jue.so' }
+  
   # these options are only needed if you choose smtp delivery
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
@@ -66,8 +69,7 @@ Jueso::Application.configure do
     :enable_starttls_auto => true
   }
   
-  #send email from localhost
-  config.action_mailer.default_url_options = { :host => 'www.jue.so' }
+
   
   
 end
