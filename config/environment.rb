@@ -11,8 +11,8 @@ Jueso::Application.configure do
    config.cache_classes = false
    
    # Config email
-   config.action_mailer.default_url_options = { :host => 'www.jue.so' }
-   config.action_mailer.raise_delivery_errors = true
+   # config.action_mailer.default_url_options = { :host => 'www.jue.so' }
+   # config.action_mailer.raise_delivery_errors = true
 
    # set delivery method to :smtp, :sendmail or :test
    config.action_mailer.delivery_method = :smtp
