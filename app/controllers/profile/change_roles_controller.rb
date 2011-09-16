@@ -15,7 +15,7 @@ class Profile::ChangeRolesController < ProfileController
     respond_to do |format|
       
       if @changerole.save
-       format.html { redirect_to '/profile/change_roles/thanks' }
+       format.html { redirect_to '/profile/thanks' }
       else
         format.html { render :action => "new" }
       end

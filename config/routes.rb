@@ -30,6 +30,8 @@ Jueso::Application.routes.draw do
   
   namespace :profile do
       resources :change_roles, :only => [:new,:create,:show]
+      get 'thanks', :to => 'profile#thanks'
+      
       resources :microposts, :only => [:create]
       resources :proposals, :only => [:show, :index]
       resources :projects, :only => [:show, :index, :edit] do
