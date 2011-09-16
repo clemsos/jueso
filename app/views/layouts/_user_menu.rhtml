@@ -15,11 +15,11 @@
 <% else %>
 	<li></li>
 	<li>
-	<%= if current_user.change_role.empty? 
-			link_to 'Become a special member', new_profile_change_role_path
-		else 
-			link_to 'Membership requested', profile_change_role_path(current_user.change_role)
-		end %>
+	<% if current_user.change_role.empty? %>
+			<% link_to 'Become a special member', new_profile_change_role_path %>
+		<% else %>
+			<%= link_to 'Membership requested', profile_change_role_path(current_user.change_role, { :controller => 'profile/change_roles', :action => 'show' })%>
+		<% end %>
 <% end %>
 
 	
