@@ -29,7 +29,7 @@ Jueso::Application.routes.draw do
   resources :microposts, :only => [:destroy]
   
   namespace :profile do
-      resources :change_roles, :only => [:new,:create,:show]
+      resources :change_roles
       get 'thanks', :to => 'profile#thanks'
       
       resources :microposts, :only => [:create]
