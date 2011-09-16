@@ -1,6 +1,7 @@
 class ChangeRole < ActiveRecord::Base
   validates_presence_of :real_name, :role 
   belongs_to :user
+  attr_accessible :id, :phone, :more, :description, :real_name 
   
   validates :description, :presence => true, :length => { :maximum => 400 } 
   validates :more, :presence => true, :length => { :maximum => 400 }
