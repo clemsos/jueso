@@ -35,6 +35,9 @@ Jueso::Application.configure do
   # Enable serving of images, stylesheets, and javascripts from an asset server
   # config.action_controller.asset_host = "http://assets.example.com"
 
+  #setup mail host
+  config.action_mailer.default_url_options = { :host => 'jue.so' }
+
   # Disable delivery errors, bad email addresses will be ignored
   config.action_mailer.raise_delivery_errors = true
 
@@ -48,15 +51,11 @@ Jueso::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
     
-  #sen email from localhost
   # Config email
   config.action_mailer.raise_delivery_errors = true
   
   # set delivery method to :smtp, :sendmail or :test
   config.action_mailer.delivery_method = :smtp
-
-  #send email from localhost
-   config.action_mailer.default_url_options = { :host => 'www.jue.so' }
   
   # these options are only needed if you choose smtp delivery
   config.action_mailer.smtp_settings = {
