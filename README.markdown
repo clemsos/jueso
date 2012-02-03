@@ -25,10 +25,12 @@ Admins can be created through console only :
 
 ## About Users ##
 For front-end users, there is 4 different users types (Role) :
-  * Admin : can do everything
-  * Member : can edit his profile, start a Proposal
-  * Artist : advanced profile (portfolio
-  * Institution 
+    
+    * Admin : can do everything
+    * Member : can edit his profile, start a Proposal
+    * Artist : advanced profile (portfolio
+    * Institution 
+    
 
 You can add roles through admin interface.
 Permissions management : check app/models/ability.rb
@@ -38,10 +40,7 @@ Permissions management : check app/models/ability.rb
 1. Register
 2. Confirm account
 2. Upload a project proposal (Proposal)
-4. Proposals are reviewed by Admin
-    * pending
-    * rejected
-    * accepted 
+4. Proposals are reviewed by Admin (pending, rejected, accepted)
 5. If proposal is accepted, then it becomes a project (Project)
     * published
     * unpublished
