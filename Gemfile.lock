@@ -147,7 +147,6 @@ GEM
       activesupport (>= 2.3.2)
       cocaine (>= 0.0.2)
       mime-types
-    pg (0.12.2)
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -232,7 +231,6 @@ DEPENDENCIES
   mysql2 (< 0.3)
   nested_form
   paperclip (~> 2.3)
-  pg
   rails (= 3.0.9)
   remotipart (~> 0.4)
   rspec

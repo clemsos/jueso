@@ -35,10 +35,12 @@ gem "paperclip", "~> 2.3" # require ImageMagick
 #Tags
 gem 'acts-as-taggable-on'
 
+
+gem 'mysql2', '< 0.3'
+
 group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'faker'
-  gem 'mysql2', '< 0.3'
 end
 
 group :test do
@@ -47,12 +49,9 @@ group :test do
   gem 'webrat', '0.7.1'
   gem 'spork', '0.9.0.rc5'
   gem 'factory_girl_rails', '1.0'
-  gem 'mysql2', '< 0.3'
 end
 
-group :production do
-  gem 'pg'
-end
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
