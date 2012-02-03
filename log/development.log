@@ -360,3 +360,519 @@ Rendered layouts/_bottom.rhtml (1.6ms)
 Rendered users/_login_popup.html.erb (82.8ms)
 Rendered devise/sessions/new.html.erb within layouts/application (160.4ms)
 Completed 200 OK in 217ms (Views: 188.5ms | ActiveRecord: 4.6ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (13.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/" for 127.0.0.1 at 2012-02-03 19:26:25 +0100
+  Processing by PagesController#home as HTML
+Completed   in 1141ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-02-03 19:26:27 +0100
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  Processing by Devise::SessionsController#new as HTML
+Rendered layouts/_stylesheets.rhtml (1.0ms)
+Rendered layouts/_nav.rhtml (1.9ms)
+Rendered layouts/_header.rhtml (3.8ms)
+Rendered layouts/_footer.rhtml (3.6ms)
+Rendered layouts/_bottom.rhtml (0.9ms)
+Rendered users/_login_popup.html.erb (9.7ms)
+Rendered devise/sessions/new.html.erb within layouts/application (38.5ms)
+Completed 200 OK in 103ms (Views: 74.1ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2012-02-03 19:26:32 +0100
+  [1m[35mSQL (0.9ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.8ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  Processing by Devise::RegistrationsController#new as HTML
+Rendered devise/shared/_links.erb (2.6ms)
+Rendered layouts/_stylesheets.rhtml (1.1ms)
+Rendered layouts/_nav.rhtml (2.0ms)
+Rendered layouts/_header.rhtml (3.6ms)
+Rendered layouts/_footer.rhtml (3.0ms)
+Rendered layouts/_bottom.rhtml (0.7ms)
+Rendered users/_login_popup.html.erb (11.9ms)
+Rendered devise/registrations/new.html.erb within layouts/application (406.0ms)
+Completed 200 OK in 416ms (Views: 414.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/validators/uniqueness?case_sensitive=true&user%5Busername%5D=clemsos" for 127.0.0.1 at 2012-02-03 19:26:38 +0100
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (65.3ms)[0m  SELECT 1 FROM `users` WHERE `users`.`username` = 'clemsos' ORDER BY users.created_at DESC LIMIT 1
+
+
+Started GET "/validators/uniqueness?case_sensitive=true&user%5Bemail%5D=clement.renaud%40gmail.com" for 127.0.0.1 at 2012-02-03 19:26:39 +0100
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (16.6ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = 'clement.renaud@gmail.com' ORDER BY users.created_at DESC LIMIT 1[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2012-02-03 19:26:46 +0100
+  [1m[35mSQL (1.4ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "user"=>{"username"=>"clemsos", "email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新增User"}
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `beta_invites` WHERE `beta_invites`.`email` = 'clement.renaud@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (18.2ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT 1 FROM `users` WHERE (`users`.`username` = BINARY 'clemsos') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mROLLBACK[0m
+Rendered devise/shared/_links.erb (2.0ms)
+Rendered layouts/_stylesheets.rhtml (1.5ms)
+Rendered layouts/_nav.rhtml (2.1ms)
+Rendered layouts/_header.rhtml (3.9ms)
+Rendered layouts/_footer.rhtml (2.8ms)
+Rendered layouts/_bottom.rhtml (0.8ms)
+Rendered users/_login_popup.html.erb (9.7ms)
+Rendered devise/registrations/new.html.erb within layouts/application (306.4ms)
+Completed 200 OK in 551ms (Views: 316.6ms | ActiveRecord: 118.0ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `beta_invites`[0m
+  [1m[35mAREL (39.9ms)[0m  INSERT INTO `beta_invites` (`email`, `name`, `created_at`, `updated_at`) VALUES ('clement.renaud@gmail.com', 'clement', '2012-02-03 18:27:48', '2012-02-03 18:27:48')
+  [1m[36mSQL (88.3ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/validators/uniqueness?case_sensitive=true&user%5Busername%5D=clemsos" for 127.0.0.1 at 2012-02-03 19:28:22 +0100
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `users` WHERE `users`.`username` = 'clemsos' ORDER BY users.created_at DESC LIMIT 1
+
+
+Started GET "/validators/uniqueness?case_sensitive=true&user%5Bemail%5D=clement.renaud%40gmail.com" for 127.0.0.1 at 2012-02-03 19:28:23 +0100
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE `users`.`email` = 'clement.renaud@gmail.com' ORDER BY users.created_at DESC LIMIT 1[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2012-02-03 19:28:25 +0100
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "user"=>{"username"=>"clemsos", "email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新增User"}
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+  [1m[36mSQL (26.0ms)[0m  [1mSELECT 1 FROM `beta_invites` WHERE `beta_invites`.`email` = 'clement.renaud@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT 1 FROM `users` WHERE (`users`.`username` = BINARY 'clemsos') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'bbk0jJVazO3gXp8Ag4n3' ORDER BY users.created_at DESC LIMIT 1[0m
+  [1m[35mRole Load (0.4ms)[0m  SELECT `roles`.id FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = NULL )
+  [1m[36mRole Load (0.3ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  ROLLBACK
+Completed 404 Not Found in 1063ms
+
+ActiveRecord::RecordNotFound (Couldn't find Role with ID=1):
+  app/models/user.rb:156:in `setup_role'
+
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.7ms)
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles`[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO `roles` (`name`, `created_at`, `updated_at`) VALUES ('Member', '2012-02-03 18:29:47', '2012-02-03 18:29:47')
+  [1m[36mSQL (144.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from irb_binding at (irb):3)
+  [1m[36mSQL (0.1ms)[0m  [1mCOMMIT[0m
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+
+
+Started POST "/users" for 127.0.0.1 at 2012-02-03 19:30:12 +0100
+  Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "user"=>{"username"=>"clemsos", "email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"新增User"}
+  [1m[35mSQL (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `beta_invites` WHERE `beta_invites`.`email` = 'clement.renaud@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT 1 FROM `users` WHERE (`users`.`username` = BINARY 'clemsos') LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT 1 FROM `users` WHERE (`users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'HYxRPgCqvGWO2sIuzQNN' ORDER BY users.created_at DESC LIMIT 1[0m
+  [1m[35mRole Load (0.3ms)[0m  SELECT `roles`.id FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = NULL )
+  [1m[36mRole Load (0.6ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE `roles`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (1.5ms)[0m  describe `users`
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `password_salt`, `confirmation_token`, `confirmed_at`, `confirmation_sent_at`, `created_at`, `updated_at`, `avatar_file_name`, `avatar_content_type`, `avatar_file_size`, `avatar_updated_at`, `username`, `bio`, `link`, `city`, `weibo`, `alias`) VALUES ('clement.renaud@gmail.com', '$2a$10$lFqJxOWfGhiPM2RX9PO7meip2mKjpaBbBabbn09PmAE3Q9hLFKtBq', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, 'HYxRPgCqvGWO2sIuzQNN', NULL, '2012-02-03 18:30:14', '2012-02-03 18:30:14', '2012-02-03 18:30:14', NULL, NULL, NULL, NULL, 'clemsos', NULL, NULL, NULL, NULL, NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  describe `delayed_jobs`
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO `delayed_jobs` (`priority`, `attempts`, `handler`, `last_error`, `run_at`, `locked_at`, `failed_at`, `locked_by`, `created_at`, `updated_at`) VALUES (0, 0, '--- !ruby/struct:Delayed::PerformableMethod \nobject: !ruby/ActiveRecord:User \n attributes: \n email: clement.renaud@gmail.com\n encrypted_password: $2a$10$lFqJxOWfGhiPM2RX9PO7meip2mKjpaBbBabbn09PmAE3Q9hLFKtBq\n reset_password_token: \n reset_password_sent_at: \n remember_created_at: \n sign_in_count: 0\n current_sign_in_at: \n last_sign_in_at: \n current_sign_in_ip: \n last_sign_in_ip: \n password_salt: \n confirmation_token: HYxRPgCqvGWO2sIuzQNN\n confirmed_at: \n confirmation_sent_at: 2012-02-03 18:30:14.872967 Z\n created_at: &id001 2012-02-03 18:30:14.886207 Z\n updated_at: *id001\n avatar_file_name: \n avatar_content_type: \n avatar_file_size: \n avatar_updated_at: \n username: clemsos\n bio: \n link: \n city: \n weibo: \n alias: \n id: 1\nmethod_name: :send_confirmation_instructions_without_delay\nargs: []\n\n', NULL, '2012-02-03 18:31:14', NULL, NULL, NULL, '2012-02-03 18:30:14', '2012-02-03 18:30:14')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `roles_users` (`role_id`, `user_id`) VALUES (1, 1)
+[paperclip] Saving attachments.
+  [1m[36mSQL (106.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1262ms
+
+
+Started GET "/" for 127.0.0.1 at 2012-02-03 19:30:15 +0100
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.3ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  Processing by PagesController#home as HTML
+Completed   in 1ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-02-03 19:30:16 +0100
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+  Processing by Devise::SessionsController#new as HTML
+Rendered layouts/_stylesheets.rhtml (0.9ms)
+Rendered layouts/_nav.rhtml (2.4ms)
+Rendered layouts/_header.rhtml (5.1ms)
+Rendered layouts/_footer.rhtml (2.9ms)
+Rendered layouts/_bottom.rhtml (0.7ms)
+Rendered users/_login_popup.html.erb (10.2ms)
+Rendered devise/sessions/new.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 77ms (Views: 47.8ms | ActiveRecord: 6.2ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mAREL (89.1ms)[0m  UPDATE `delayed_jobs` SET locked_at = '2012-02-03 18:32:20', locked_by = 'host:ubuntu pid:24339' WHERE (id = 1 and (locked_at is null or locked_at < '2012-02-03 14:32:20') and (run_at <= '2012-02-03 18:32:20'))
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY users.created_at DESC LIMIT 1[0m
+Rendered devise/mailer/confirmation_instructions.html.erb (1.0ms)
+
+Sent mail to clement.renaud@gmail.com (2352ms)
+Date: Fri, 03 Feb 2012 19:32:21 +0100
+From: clement@jue.so
+Reply-To: clement@jue.so
+To: clement.renaud@gmail.com
+Message-ID: <4f2c2835a2fce_5f134b30052306ba@ubuntu.mail>
+Subject: Confirmation instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Welcome clement.renaud@gmail.com!</p>
+
+<p>You can confirm your account through the link below:</p>
+
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=HYxRPgCqvGWO2sIuzQNN">Confirm my account</a></p>
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mAREL (0.5ms)[0m  [1mDELETE FROM `delayed_jobs` WHERE `delayed_jobs`.`id` = 1[0m
+  [1m[35mSQL (113.0ms)[0m  COMMIT
+  [1m[36mAREL (0.4ms)[0m  [1mUPDATE `delayed_jobs` SET locked_by = null, locked_at = null WHERE (locked_by = 'host:ubuntu pid:24339')[0m
+  [1m[35mAREL (0.4ms)[0m  UPDATE `delayed_jobs` SET locked_by = null, locked_at = null WHERE (locked_by = 'host:ubuntu pid:24339')
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.0ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-02-03 20:05:45 +0100
+  Processing by Admin::DashboardController#index as HTML
+Completed   in 821ms
+
+
+Started GET "/admin/login" for 127.0.0.1 at 2012-02-03 20:05:47 +0100
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (23.6ms)
+Completed 200 OK in 58ms (Views: 41.5ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2012-02-03 20:05:58 +0100
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.7ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "admin_user"=>{"email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mAdminUser Load (98.6ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'clement.renaud@gmail.com' LIMIT 1
+Completed   in 103ms
+  Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "admin_user"=>{"email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Rendered devise/shared/_links.erb (1.7ms)
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (103.5ms)
+Completed 200 OK in 214ms (Views: 112.0ms | ActiveRecord: 103.3ms)
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2012-02-03 20:06:04 +0100
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "admin_user"=>{"email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'clement.renaud@gmail.com' LIMIT 1[0m
+Completed   in 5ms
+  Processing by ActiveAdmin::Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "admin_user"=>{"email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+Rendered devise/shared/_links.erb (1.8ms)
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/devise/sessions/new.html.erb within layouts/active_admin_logged_out (21.0ms)
+Completed 200 OK in 195ms (Views: 30.6ms | ActiveRecord: 5.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.3ms)[0m  BEGIN
+  [1m[36mSQL (29.4ms)[0m  [1mSELECT 1 FROM `admin_users` WHERE (`admin_users`.`email` = BINARY 'clement.renaud@gmail.com') LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  describe `admin_users`
+  [1m[36mAREL (30.7ms)[0m  [1mINSERT INTO `admin_users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES ('clement.renaud@gmail.com', '$2a$10$ohkdGTFib6b0M9qyDFHKbe0dlKhFIm8reTgJWjjbWY7V2P6KnPiga', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2012-02-03 19:07:37', '2012-02-03 19:07:37')[0m
+  [1m[35mSQL (106.6ms)[0m  COMMIT
+
+
+Started POST "/admin/login" for 127.0.0.1 at 2012-02-03 20:07:41 +0100
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  Processing by ActiveAdmin::Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xe0g9BX/1len35ztge7pqM0/VGq2zHlHWWrAKsOdi6M=", "admin_user"=>{"email"=>"clement.renaud@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Login"}
+  [1m[35mAdminUser Load (0.5ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`email` = 'clement.renaud@gmail.com' LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mAREL (7.7ms)[0m  UPDATE `admin_users` SET `last_sign_in_at` = '2012-02-03 19:07:43', `current_sign_in_at` = '2012-02-03 19:07:43', `last_sign_in_ip` = '127.0.0.1', `current_sign_in_ip` = '127.0.0.1', `sign_in_count` = 1, `updated_at` = '2012-02-03 19:07:43' WHERE `admin_users`.`id` = 2
+  [1m[36mSQL (83.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/admin
+Completed 302 Found in 328ms
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-02-03 20:07:44 +0100
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.8ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.6ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  Processing by Admin::DashboardController#index as HTML
+  [1m[35mAdminUser Load (0.6ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` ORDER BY id desc LIMIT 20[0m
+  [1m[35mProposal Load (0.9ms)[0m  SELECT `proposals`.* FROM `proposals` ORDER BY proposals.created_at DESC, id desc LIMIT 10
+  [1m[36mChangeRole Load (0.4ms)[0m  [1mSELECT `change_roles`.* FROM `change_roles` ORDER BY id desc LIMIT 10[0m
+  [1m[35mLead Load (0.4ms)[0m  SELECT `leads`.* FROM `leads` ORDER BY id desc LIMIT 10
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` ORDER BY id desc LIMIT 10[0m
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/dashboard/index.html.arb (20.1ms)
+Completed 200 OK in 183ms (Views: 55.9ms | ActiveRecord: 9.1ms)
+
+
+Started GET "/admin/change_roles" for 127.0.0.1 at 2012-02-03 20:07:54 +0100
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.7ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  Processing by Admin::ChangeRolesController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `change_roles`[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `change_roles` WHERE `change_roles`.`state` = 'approved'
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT COUNT(*) FROM `change_roles` WHERE `change_roles`.`state` = 'rejected'[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `change_roles` WHERE `change_roles`.`state` = 'pending'
+  [1m[36mChangeRole Load (0.4ms)[0m  [1mSELECT `change_roles`.* FROM `change_roles` WHERE `change_roles`.`state` = 'pending' ORDER BY `change_roles`.id desc LIMIT 30 OFFSET 0[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT `users`.* FROM `users` ORDER BY users.created_at DESC
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/resource/index.html.arb (334.4ms)
+Completed 200 OK in 367ms (Views: 343.1ms | ActiveRecord: 8.9ms)
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-02-03 20:10:39 +0100
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.7ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.7ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1[0m
+  [1m[35mComment Load (0.2ms)[0m  SELECT `comments`.* FROM `comments` ORDER BY id desc LIMIT 20
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT `proposals`.* FROM `proposals` ORDER BY proposals.created_at DESC, id desc LIMIT 10[0m
+  [1m[35mChangeRole Load (0.2ms)[0m  SELECT `change_roles`.* FROM `change_roles` ORDER BY id desc LIMIT 10
+  [1m[36mLead Load (0.2ms)[0m  [1mSELECT `leads`.* FROM `leads` ORDER BY id desc LIMIT 10[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT `projects`.* FROM `projects` ORDER BY id desc LIMIT 10
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/dashboard/index.html.arb (12.7ms)
+Completed 200 OK in 45ms (Views: 26.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2012-02-03 20:10:45 +0100
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (0.6ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  Processing by Admin::ProjectsController#index as HTML
+  [1m[36mAdminUser Load (0.1ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  SELECT COUNT(*) FROM `projects`
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished'))[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('unpublished'))
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('funded'))[0m
+  [1m[35mSQL (0.4ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('expired'))
+  [1m[36mProject Load (0.4ms)[0m  [1mSELECT `projects`.* FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished')) ORDER BY `projects`.id desc LIMIT 30 OFFSET 0[0m
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/resource/index.html.arb (224.5ms)
+Completed 200 OK in 255ms (Views: 231.9ms | ActiveRecord: 8.1ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (0.7ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2012-02-03 20:13:16 +0100
+  Processing by Admin::ProjectsController#index as HTML
+  [1m[35mAdminUser Load (0.1ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished'))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('unpublished'))[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('funded'))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('expired'))[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished')) ORDER BY `projects`.id desc LIMIT 30 OFFSET 0
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/resource/index.html.arb (126.9ms)
+Completed 200 OK in 979ms (Views: 136.3ms | ActiveRecord: 1.3ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.0ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/admin/projects" for 127.0.0.1 at 2012-02-03 20:15:32 +0100
+  Processing by Admin::ProjectsController#index as HTML
+  [1m[35mAdminUser Load (0.2ms)[0m  SELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `projects`[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished'))
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('unpublished'))[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('funded'))
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM `projects` WHERE (`projects`.`state` IN ('expired'))[0m
+  [1m[35mProject Load (0.1ms)[0m  SELECT `projects`.* FROM `projects` WHERE (`projects`.`state` NOT IN ('unpublished')) ORDER BY `projects`.id desc LIMIT 30 OFFSET 0
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/resource/index.html.arb (119.4ms)
+Completed 200 OK in 1036ms (Views: 127.8ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/admin/user_comments" for 127.0.0.1 at 2012-02-03 20:15:36 +0100
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.0ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  Processing by Admin::UserCommentsController#index as HTML
+  [1m[36mAdminUser Load (0.3ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` ORDER BY `comments`.id desc LIMIT 30 OFFSET 0
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT `users`.* FROM `users` ORDER BY users.created_at DESC[0m
+  [1m[35mProject Load (0.4ms)[0m  SELECT `projects`.* FROM `projects`
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/resource/index.html.arb (178.8ms)
+Completed 200 OK in 214ms (Views: 189.2ms | ActiveRecord: 6.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.9ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.2ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.3ms)[0m  [1mSHOW TABLES[0m
+
+
+Started GET "/admin" for 127.0.0.1 at 2012-02-03 20:16:44 +0100
+  [1m[36mSQL (0.6ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.7ms)[0m  describe `roles_users`
+  [1m[36mSQL (0.9ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.2ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  Processing by Admin::DashboardController#index as HTML
+  [1m[36mAdminUser Load (0.2ms)[0m  [1mSELECT `admin_users`.* FROM `admin_users` WHERE `admin_users`.`id` = 2 LIMIT 1[0m
+  [1m[35mComment Load (0.1ms)[0m  SELECT `comments`.* FROM `comments` ORDER BY id desc LIMIT 20
+  [1m[36mProposal Load (0.1ms)[0m  [1mSELECT `proposals`.* FROM `proposals` ORDER BY proposals.created_at DESC, id desc LIMIT 10[0m
+  [1m[35mChangeRole Load (0.2ms)[0m  SELECT `change_roles`.* FROM `change_roles` ORDER BY id desc LIMIT 10
+  [1m[36mLead Load (0.2ms)[0m  [1mSELECT `leads`.* FROM `leads` ORDER BY id desc LIMIT 10[0m
+  [1m[35mProject Load (0.2ms)[0m  SELECT `projects`.* FROM `projects` ORDER BY id desc LIMIT 10
+Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/dashboard/index.html.arb (15.5ms)
+Completed 200 OK in 54ms (Views: 29.9ms | ActiveRecord: 6.8ms)

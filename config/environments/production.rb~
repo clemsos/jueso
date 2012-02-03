@@ -61,7 +61,7 @@ Jueso::Application.configure do
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
     :port                 => 587,
-    # :domain               => 'www.jue.so',
+    #:domain               => 'www.jue.so',
     :user_name            => 'juemailer@gmail.com',
     :password             => 'JueStudio12345',
     :authentication       => 'plain',
