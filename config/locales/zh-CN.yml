@@ -250,7 +250,7 @@ zh-CN:
       update: "更新%{model}"
       submit: "储存%{model}"
 
- active_admin:
+  active_admin:
     dashboard: "控制面板"
     dashboard_welcome:
       welcome: "欢迎使用Active Admin. 这是默认的控制面板页."
