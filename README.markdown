@@ -92,5 +92,4 @@ Written with :
   * Mysql 5
   * ImageMagik
 
-
-@clemsos, 2011
+Available under MIT License, Clément Renaud @clemsos, 2011
