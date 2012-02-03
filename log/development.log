@@ -876,3 +876,16 @@ Started GET "/admin" for 127.0.0.1 at 2012-02-03 20:16:44 +0100
   [1m[35mProject Load (0.2ms)[0m  SELECT `projects`.* FROM `projects` ORDER BY id desc LIMIT 10
 Rendered /home/clement/.rvm/gems/ruby-1.9.3-p0/bundler/gems/active_admin-0f8aa21f1225/app/views/active_admin/dashboard/index.html.arb (15.5ms)
 Completed 200 OK in 54ms (Views: 29.9ms | ActiveRecord: 6.8ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from <top (required)> at /home/clement/Sites/jueso/config/environment.rb:5)
+  [1m[36mSQL (1.0ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.8ms)[0m  describe `roles_users`
+  [1m[36mSQL (1.1ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (0.9ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (1.1ms)[0m  SHOW TABLES
+  [1m[36mSQL (1.1ms)[0m  [1mSHOW TABLES[0m
+  [1m[35mSQL (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT 1 FROM `admin_users` WHERE (`admin_users`.`email` = BINARY 'email@website.com') LIMIT 1[0m
+  [1m[35mSQL (1.2ms)[0m  describe `admin_users`
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO `admin_users` (`email`, `encrypted_password`, `reset_password_token`, `reset_password_sent_at`, `remember_created_at`, `sign_in_count`, `current_sign_in_at`, `last_sign_in_at`, `current_sign_in_ip`, `last_sign_in_ip`, `created_at`, `updated_at`) VALUES ('email@website.com', '$2a$10$M5HiNG9IB5/4WMo4ctMRBuIidnKEEqHghijGkn/tS6H66uPCL5/4u', NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, '2012-02-03 19:46:24', '2012-02-03 19:46:24')[0m
+  [1m[35mSQL (80.0ms)[0m  COMMIT
