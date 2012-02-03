@@ -13,16 +13,15 @@ The ADMIN users are NOT related with users regitered through front-end website.
 They are stored in separate tables and models (AdminUser).
 
 Admins can be created through console only :
-<pre><code>
-clement@ubuntu:~/Sites/jueso$ rails c
-Loading development environment (Rails 3.0.9)
-1.9.3p0 :001 > a = AdminUser.new
-1.9.3p0 :002 > a.email = "email@website.com" 
-1.9.3p0 :003 > a.password = "password"
-1.9.3p0 :004 > a.save!
- => true 
-
-</code></pre>
+    
+    clement@ubuntu:~/Sites/jueso$ rails c
+    Loading development environment (Rails 3.0.9)
+    1.9.3p0 :001 > a = AdminUser.new
+    1.9.3p0 :002 > a.email = "email@website.com" 
+    1.9.3p0 :003 > a.password = "password"
+    1.9.3p0 :004 > a.save!
+     => true 
+    
 
 ## About Users ##
 For front-end users, there is 4 different users types (Role) :
