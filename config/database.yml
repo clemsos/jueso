@@ -32,8 +32,8 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: jueso_production
+  database: heroku_eaa888fdfce10cc
   pool: 5
-  username: jueso
-  password: 123.qwe
+  username: ce4d55fb2c4448
+  password: 2ae6014e
   host: localhost
