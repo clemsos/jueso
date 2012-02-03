@@ -1,7 +1,6 @@
 # Crowdfunding platform #
-README
 
-This is the README file for a crowdfunding platform based on a draft created for jue.so website (Shanghai, 2011).
+This is the README file for a crowdfunding platform created first for jue.so website (Shanghai, 2011).
 
 
 ## Admin ##
@@ -10,6 +9,7 @@ You can access admin control panel through
 	yourwebsite.com/admin
 
 The ADMIN users are NOT related with users regitered through front-end website.
+
 They are stored in separate tables and models (AdminUser).
 
 Admins can be created through console only :
@@ -25,10 +25,10 @@ Admins can be created through console only :
 
 ## About Users ##
 For front-end users, there is 4 different users types (Role) :
-    * Admin : can do everything
-    * Member : can edit his profile, start a Proposal
-    * Artist : advanced profile (portfolio
-    * Institution 
+  * Admin : can do everything
+  * Member : can edit his profile, start a Proposal
+  * Artist : advanced profile (portfolio
+  * Institution 
 
 You can add roles through admin interface.
 Permissions management : check app/models/ability.rb
@@ -51,17 +51,16 @@ Permissions management : check app/models/ability.rb
 
 
 #### Community oriented ####
-* own profile
-* can follow projects + users
-* can post updates through his profile 
+  * own profile
+  * can follow projects + users
+  * can post updates through his profile 
 
 
 ## Requirements ##
 Written with :
-  Rails 3
-  Ruby 1.9.3
-  ImageMagik
+  * Rails 3
+  * Ruby 1.9.3
+  * ImageMagik
 
 
-@clemsos
-2011
+@clemsos, 2011
