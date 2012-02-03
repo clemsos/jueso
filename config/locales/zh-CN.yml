@@ -240,7 +240,7 @@ zh-CN:
       less_than_or_equal_to: "必须小于或等于 %{count}"
       odd: "必须为单数"
       even: "必须为双数"
-      email_format: 邮箱地址不对"
+      email_format: "邮箱地址不对"
 
   helpers:
     select:
