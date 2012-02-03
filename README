@@ -5,15 +5,15 @@ This is the README file for a crowdfunding platform based on a draft created for
 
 
 ## Admin ##
-You can admin part through 
-    yourwebsite.com/admin
+You can access admin control panel through 
+
+	yourwebsite.com/admin
 
 The ADMIN users are NOT related with users regitered through front-end website.
 They are stored in separate tables and models (AdminUser).
 
 Admins can be created through console only :
-'''rails
-
+<pre><code>
 clement@ubuntu:~/Sites/jueso$ rails c
 Loading development environment (Rails 3.0.9)
 1.9.3p0 :001 > a = AdminUser.new
@@ -22,7 +22,7 @@ Loading development environment (Rails 3.0.9)
 1.9.3p0 :004 > a.save!
  => true 
 
-'''
+</code></pre>
 
 ## About Users ##
 For front-end users, there is 4 different users types (Role) :
