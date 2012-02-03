@@ -83,7 +83,7 @@ When Beta mode is enable, you will have to add users to Beta list before they ca
 To enable/disable beta invitations, uncomment/comment line 11 in app/model/User.rb
 
     
-   before_validation :beta_invited?
+    before_validation :beta_invited?
     
 
 
