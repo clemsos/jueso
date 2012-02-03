@@ -2,6 +2,8 @@
 
 This is the README file for a crowdfunding platform created first for jue.so website (Shanghai, 2011).
 
+View test website http://deep-sword-8508.herokuapp.com/
+
 
 ## Functionalities ##
 

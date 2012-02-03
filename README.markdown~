@@ -2,26 +2,26 @@
 
 This is the README file for a crowdfunding platform created first for jue.so website (Shanghai, 2011).
 
-
+View test website http://deep-sword-8508.herokuapp.com/
 ## Functionalities ##
 
-* Crowdfunding platform 
+#### Crowdfunding platform ####
   * Crowfunding solution : rewarding, funding, deadline+expiration
   * Follow project life through updates and comments 
   * Project moderation : submission require admin approval
   * All registered users can submit projects
 
-* For creative people 
+#### For creative people ####
   * Customize profile (avatar, geo-loc, etc)
   * Advanced users can open a personal portfolio
   * Profile can be turn into personal website
 
-* Community-oriented
+#### Community-oriented ####
   * can follow projects + users
   * can post updates through profile 
   * can update profile through social networks (to be implemented)
 
-* Others
+#### Others ####
   * Editorial : projects can be featured on home
   * Multilingual : Includes English and Chinese
   * Beta test : build for beta test and production
