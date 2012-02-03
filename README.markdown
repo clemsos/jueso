@@ -66,6 +66,8 @@ Permissions management : check app/models/ability.rb
 2. Upload a project proposal (Proposal)
 4. Proposals are reviewed by Admin (pending, rejected, accepted)
 5. If proposal is accepted, then it becomes a project (Project)
+
+
     
     * published
     * unpublished
