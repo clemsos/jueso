@@ -74,7 +74,7 @@ Permissions management : check app/models/ability.rb
  
 ## Enable beta test mode ##
 
-When Beta mode is enable, you will have to add users to Beta list before they can register (BetaInvite) 
+When Beta mode is enable, you will have to add users to Beta list before they can register (BetaInvite).
 
 To enable/disable beta invitations, uncomment/comment line 11 in app/model/User.rb
 
