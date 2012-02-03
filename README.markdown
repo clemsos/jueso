@@ -19,9 +19,9 @@ View test website http://deep-sword-8508.herokuapp.com/
   * Profile can be turn into personal website
 
 #### Community-oriented ####
-  * can follow projects + users
-  * can post updates through profile 
-  * can update profile through social networks (to be implemented)
+  * Follow projects + users
+  * Post updates through profile 
+  * Update profile through social networks (to be implemented)
 
 #### Others ####
   * Editorial : projects can be featured on home
@@ -60,7 +60,7 @@ For front-end users, there is 4 different users types (Role) :
 You can add roles through admin interface.
 Permissions management : check app/models/ability.rb
 
-## Upload a project : ##
+## Upload a project : ## 
 1. Register
 2. Confirm account
 2. Upload a project proposal (Proposal)
